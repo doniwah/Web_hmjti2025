@@ -249,7 +249,6 @@ Mission List Styling .mission-list {
 
 /* Program */
 
-
 .wrapper {
   padding: 20px 20px;
 }
@@ -311,7 +310,6 @@ Mission List Styling .mission-list {
   overflow: hidden;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
-
 
 .box img {
   width: 100%;
@@ -607,17 +605,22 @@ h2 {
   margin-bottom: 20px;
 }
 
-#bot{
+#bot {
   height: 30vh;
   width: 100%;
   background-color: red;
+}
+
+#bot p {
+  font-weight: 600;
+  font-family: sans-serif;
 }
 
 #bot .main {
   justify-content: space-around;
 }
 
-#bot .quicklinks{
+#bot .quicklinks {
   width: 375px;
   height: 100%;
   background-color: green;
@@ -629,11 +632,11 @@ h2 {
   justify-content: center;
 }
 
-#bot .quicklinks a{
+#bot .quicklinks a {
   text-decoration: none;
 }
 
-#bot .sosmed{
+#bot .sosmed {
   width: 370px;
   height: 100%;
   background-color: yellow;
@@ -641,20 +644,20 @@ h2 {
   align-content: center;
 }
 
-#bot .sosmed .icon{
+#bot .sosmed .icon {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-#bot .sosmed .icon .canvas{
-  width : 30px;
+#bot .sosmed .icon .canvas {
+  width: 30px;
   height: 30px;
   align-content: center;
   text-align: center;
 }
 
-#bot .sosmed .icon .canvas:hover{
+#bot .sosmed .icon .canvas:hover {
   animation: zoom-in-zoom-out 0.5s ease;
   -webkit-animation: zoom-in-zoom-out 0.5s ease;
   width: 30px;
@@ -669,27 +672,27 @@ h2 {
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
-}
+  }
   50% {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
-}
+  }
   100% {
     transform: scale(1);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
-}
+  }
 }
 
-#bot .contactinfo p{
+#bot .contactinfo p {
   margin: 0;
 }
-#bot .contactinfo{
+#bot .contactinfo {
   width: 370px;
   height: 100%;
   background-color: rgb(0, 255, 200);
