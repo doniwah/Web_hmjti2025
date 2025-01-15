@@ -1,0 +1,455 @@
+:root {
+  --pr-color: #0c52e7;
+}
+
+body {
+  font-family: "Poppins", serif;
+  background: #f3fff4;
+}
+
+/* Navbar */
+.navbar {
+  z-index: 3;
+  transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+  padding: 20px 0; /* Ukuran padding awal */
+}
+
+.navbar-scrolled {
+  background-color: rgb(250, 250, 250) !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Opsional */
+  padding: 10px 0; /* Ukuran padding setelah scroll */
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 20px; /* Ukuran font awal */
+  transition: font-size 0.3s ease-in-out;
+}
+
+.navbar-scrolled .navbar-brand {
+  font-size: 16px; /* Ukuran font setelah scroll */
+}
+
+.nav-link {
+  font-size: 16px;
+}
+
+.nav-link.active {
+  font-weight: 700;
+  border-bottom: 2px solid #007bff; /* Garis bawah */
+}
+
+/* Hero Section */
+
+/* #hero { */
+/* background: linear-gradient(160deg, var(--pr-color), #000000); */
+/* background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(0, 95, 177) 60%), url("image/kontak_img.png") bottom/contain no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden; */
+/* } */
+#hero {
+  /* background: linear-gradient(to bottom, transparent 0%, transparent 10%, #ffffff 100%), url("../image/foto_bersama.jpg") bottom right/contain no-repeat; */
+  background: linear-gradient(135deg, #045e9b 5%, #ffffff 90%);
+  /* background-image: url("../image/hmj/unnamed\ qq.png");
+  background-color: antiquewhite; */
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.img-hero {
+  height: 70%;
+}
+
+.acsent-img {
+  margin-top: 580px;
+  width: 32%;
+  height: 32%;
+  margin-left: 380px;
+  opacity: 0.5;
+}
+
+.acsent-img.scrolled {
+  opacity: 1;
+}
+
+.hero-tagline h1 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 72px;
+}
+
+.hero-tagline p {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 60px;
+  margin-top: 20px;
+  line-height: 30px;
+  width: 85%;
+}
+
+.button-lg-primary {
+  width: 237px;
+  height: 70px;
+  background: linear-gradient(160deg, var(--pr-color), #1d1d1d);
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.hero {
+  text-align: center;
+  background-image: url("image.jpg");
+  background-size: cover;
+  color: #fff;
+  padding: 100px;
+}
+
+/* .acsent-img {
+  width: 50px;
+} */
+
+/* About Section Styling */
+.about-section {
+  display: flex;
+  justify-content: flex-end; /* Tetap di kanan */
+  padding: 20px 50px; /* Tambahkan padding di kanan */
+  width: 100%; /* Pastikan lebar section penuh */
+}
+
+.about-content {
+  max-width: 600px;
+  text-align: left; /* Tetap rata kiri */
+  margin-right: 50px; /* Tambahkan jarak lebih ke kanan */
+}
+
+/* Subtitle */
+.about-subtitle {
+  color: #16a085;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 80px;
+}
+
+/* Title Styling */
+.about-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
+/* Text Styling */
+.about-text {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+Mission List Styling .mission-list {
+  list-style: none;
+  padding: 0;
+}
+
+.mission-list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+  color: #484848;
+}
+
+/* Custom Icon for List Items */
+.mission-list li:before {
+  content: "✔"; /* Gunakan tanda centang */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a085; /* Warna hijau */
+  font-size: 14px;
+}
+
+/* .about-image {
+  max-width: 500px;
+  margin-inline: auto;
+  border-radius: 5rem 2rem 5rem 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+} */
+
+/* .about-image .title {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+} */
+/* .about_image .banner__container {
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+} */
+
+.about-image img {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-top: 80px;
+  margin-right: 60px;
+  border-radius: 5rem 2rem 5rem 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+}
+
+/* .about-image::before {
+  content: "";
+  position: absolute;
+  margin: 50px;
+  top: -20px;
+  left: -20px;
+  width: 60%;
+  height: 50%;
+  background-color: #4caf50;
+  border-radius: 50%;
+  z-index: -1;
+  transform: rotate(-35deg);
+} */
+
+/* Animasi muncul dari bawah */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1.5s ease-in-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animation {
+  opacity: 0;
+  transform: translateX(-600px);
+  transition: all 1.5s ease-out;
+}
+
+/* Ketika elemen terlihat di viewport */
+.scroll-animation.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Program */
+
+.wrapper {
+  padding: 10px 10%;
+}
+
+#card-area {
+  padding: 50px 0;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.box img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.overlay {
+  height: 0;
+  width: 100%;
+  background: linear-gradient(transparent, #1c1c1c 57%);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.overlay h3 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  margin-top: 80%;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #e3e3e3;
+}
+
+.overlay a {
+  margin-top: 10px;
+  color: #fff9f9;
+  text-decoration: none;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 50px;
+  text-align: center;
+  padding: 5px 15px;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+.box:hover .overlay {
+  height: 300px;
+}
+
+/* Layanan section */
+
+#Layanan {
+  padding: 100px 0;
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 500;
+  color: var(--pr-color);
+}
+
+.sub-title {
+  font-size: 18;
+  color: #000;
+}
+
+.card-layanan {
+  width: 100%;
+  height: 313;
+  border-radius: 5px;
+  background: #fff;
+  padding: 40px;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+
+  transition: all 2s ease-in;
+}
+
+.circle-icon {
+  width: 70px;
+  height: 70px;
+  background-color: var(--pr-color);
+  border-radius: 50%;
+
+  transition: all 1s ease-in;
+}
+
+.crad-layanan h3 {
+  color: var(--pr-color);
+  font-size: 24px;
+  transition: all 2s ease-in;
+}
+
+.card-layanan p {
+  color: #000000;
+  font-size: 14px;
+
+  transition: all 4s ease-in;
+}
+
+/* contion hover */
+
+.card-layanan:hover {
+  width: 100%;
+  height: 313;
+  border-radius: 5px;
+  background: linear-gradient(160deg, var(--pr-color), #1d1d1d);
+  padding: 40px;
+  box-shadow: 0 0 7px 3px rgba(0, 0, 0, 0.05);
+
+  transition: all 2s ease-in;
+}
+
+.card-layanan:hover .circle-icon {
+  background-color: #fff;
+  transition: all 2s ease-in;
+}
+
+.card-layanan:hover h3 {
+  color: #fff;
+  font-size: 24px;
+  transition: all 2s ease-in;
+}
+
+.card-layanan:hover p {
+  color: #fff;
+  font-size: 14px;
+  transition: all 2s ease-in;
+}
+
+/* section departemen */
+.department-section {
+  padding: 80px 0;
+  background-color: transparent;
+}
+
+.department-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.department-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+}
+
+.department-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent, rgba(255, 255, 255, 1) 100%);
+  border-radius: 15px;
+}
+
+.department-content {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.department-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #10b981;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #059669;
+  color: white;
+  text-decoration: none;
+}
