@@ -637,6 +637,53 @@ h2 {
   width: 370px;
   height: 100%;
   background-color: yellow;
+  justify-items: center;
+  align-content: center;
+}
+
+#bot .sosmed .icon{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#bot .sosmed .icon .canvas{
+  width : 30px;
+  height: 30px;
+  align-content: center;
+  text-align: center;
+}
+
+#bot .sosmed .icon .canvas:hover{
+  animation: zoom-in-zoom-out 0.5s ease;
+  -webkit-animation: zoom-in-zoom-out 0.5s ease;
+  width: 30px;
+  height: 30px;
+  background-color: #0c52e7;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+  50% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
 }
 
 #bot .contactinfo p{
