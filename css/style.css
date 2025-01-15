@@ -243,12 +243,17 @@ Mission List Styling .mission-list {
 
 /* Program */
 
+
 .wrapper {
-  padding: 10px 10%;
+  padding: 20px 20px;
 }
 
 #card-area {
   padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .box {
@@ -260,7 +265,79 @@ Mission List Styling .mission-list {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+.box2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+.box3 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+.box4 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+.box5 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+.box6 {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+
 .box img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.box2 img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.box3 img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.box4 img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.box5 img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.box6 img {
   width: 100%;
   border-radius: 10px;
   display: block;
@@ -270,7 +347,7 @@ Mission List Styling .mission-list {
 .overlay {
   height: 0;
   width: 100%;
-  background: linear-gradient(transparent, #1c1c1c 57%);
+  background: linear-gradient(transparent, var(--pr-color) 57%);
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -289,7 +366,7 @@ Mission List Styling .mission-list {
 .overlay h3 {
   font-weight: 500;
   margin-bottom: 5px;
-  margin-top: 80%;
+  margin-top: 30%;
   font-size: 30px;
   letter-spacing: 2px;
   color: #e3e3e3;
@@ -297,20 +374,84 @@ Mission List Styling .mission-list {
 
 .overlay a {
   margin-top: 10px;
-  color: #fff9f9;
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 14px;
+  background: transparent;
+  border-radius: 7px;
+  text-align: center;
+  padding: 5px 15px;
+  border: 2px solid blue;
+  transition: all 0.5s;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+.overlay a:hover {
+  margin-top: 10px;
+  color: #0e0033;
   text-decoration: none;
   font-size: 14px;
   background: #fff;
-  border-radius: 50px;
+  border-radius: 7px;
   text-align: center;
   padding: 5px 15px;
+  transition: all 0.5s;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .box:hover img {
   transform: scale(1.2);
 }
-
 .box:hover .overlay {
+  height: 300px;
+}
+
+.box2:hover img {
+  transform: scale(1.2);
+}
+.box2:hover .overlay {
+  height: 300px;
+}
+
+.box3:hover img {
+  transform: scale(1.2);
+}
+.box3:hover .overlay {
+  height: 300px;
+}
+
+.box4:hover img {
+  transform: scale(1.2);
+}
+.box4:hover .overlay {
+  height: 300px;
+}
+
+.box5:hover img {
+  transform: scale(1.2);
+}
+.box5:hover .overlay {
+  height: 300px;
+}
+
+.box6:hover img {
+  transform: scale(1.2);
+}
+.box6:hover .overlay {
   height: 300px;
 }
 
