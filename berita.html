@@ -159,7 +159,7 @@
             // Create pagination container
             const paginationContainer = document.createElement('div');
             paginationContainer.className = 'pagination-container';
-            paginationContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; gap: 16px; margin: 80px 0 20px 0;';
+            paginationContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; gap: 16px; margin:20px 0;';
 
             // Create previous button
             this.prevButton = document.createElement('button');
@@ -242,7 +242,7 @@
                 this.pageIndicator.textContent = `Halaman ${this.currentPage} dari ${totalPages}`;
                 this.pageIndicator.style.display = totalPages > 1 ? 'block' : 'none';
             } else {
-                this.pageIndicator.style.display = 'none';
+                this.pageIndicator.style.display = 'none';  
             }
         }
 
