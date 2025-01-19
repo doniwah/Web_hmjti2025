@@ -33,7 +33,14 @@ body {
 
 .navbar-scrolled .navbar-brand {
   font-size: 16px; /* Ukuran font setelah scroll */
+  color: #000000 ;
 }
+
+.navbar-scrolled .navbar-brand:hover{
+  font-size: 16px; /* Ukuran font setelah scroll */
+  color: #000000;
+}
+
 
 .nav-link {
   font-size: 16px;
@@ -101,6 +108,17 @@ body {
   height: 70px;
   background: linear-gradient(160deg, var(--pr-color), #1d1d1d);
   color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.button-lg-primary:hover {
+  width: 237px;
+  height: 70px;
+  background: white;
+  color: #000000;
   border: none;
   font-size: 20px;
   font-weight: 700;
@@ -716,6 +734,23 @@ Mission List Styling .mission-list {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.acsent-img {
+  /* background-color: #045e9b ; */
+  width: 950px; /* Sesuaikan ukuran gambar */
+  height: 550px;
+  /* position: relative; */
+  top: -170px; /* Naikkan lebih ke atas */
+  left: -240px; /* Geser lebih ke kiri */
+  opacity: 0; /* Gambar disembunyikan saat awal */
+  transform: scale(0.5); /* Mulai dari ukuran kecil */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Animasi transisi */
+} 
+
+.acsent-img.visible {
+  opacity: 1; /* Tampilkan gambar */
+  transform: scale(1); /* Ukuran penuh */
 }
 
 
