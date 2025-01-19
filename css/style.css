@@ -1,4 +1,3 @@
-
 :root {
   --pr-color: #0c52e7;
 }
@@ -28,19 +27,12 @@ body {
 
 .navbar-brand {
   font-weight: 700;
-  color: white;
   font-size: 20px; /* Ukuran font awal */
   transition: font-size 0.3s ease-in-out;
 }
 
 .navbar-scrolled .navbar-brand {
   font-size: 16px; /* Ukuran font setelah scroll */
-  color: #000000;
-}
-
-.navbar-scrolled .navbar-brand:hover{
-  font-size: 16px; /* Ukuran font setelah scroll */
-  color: #000000;
 }
 
 .nav-link {
@@ -115,17 +107,6 @@ body {
   border-radius: 5px;
 }
 
-.button-lg-primary:hover {
-  width: 237px;
-  height: 70px;
-  background: white;
-  color: #000000;
-  border: none;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 5px;
-}
-
 .hero {
   text-align: center;
   background-image: url("image.jpg");
@@ -177,14 +158,20 @@ body {
 }
 
 .about-content .btn_selengkapnya {
-  height: 50px;
-  border-radius: 5px;
-  background: #87bbff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: blue  ;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .about-content .btn_selengkapnya:hover {
-  background: #ffffff;
+  background: rgb(0, 0, 185);
   border: none;
 }
 
@@ -626,8 +613,10 @@ Mission List Styling .mission-list {
 #contact {
   height: 100vh;
   width: 100%;
-  background-color: #045e9b;
   margin-bottom: 20px;
+  background-image: url("../image/hmj/coba.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #bot {
@@ -729,19 +718,4 @@ Mission List Styling .mission-list {
   justify-content: center;
 }
 
-.acsent-img {
-  /* background-color: #045e9b ; */
-  width: 950px; /* Sesuaikan ukuran gambar */
-  height: 550px;
-  /* position: relative; */
-  top: -170px; /* Naikkan lebih ke atas */
-  left: -240px; /* Geser lebih ke kiri */
-  opacity: 0; /* Gambar disembunyikan saat awal */
-  transform: scale(0.5); /* Mulai dari ukuran kecil */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Animasi transisi */
-} 
 
-.acsent-img.visible {
-  opacity: 1; /* Tampilkan gambar */
-  transform: scale(1); /* Ukuran penuh */
-}
