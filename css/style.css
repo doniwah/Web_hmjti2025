@@ -632,9 +632,10 @@ Mission List Styling .mission-list {
   height: 100vh;
   width: 100%;
   margin-bottom: 20px;
-  background-image: url("../image/hmj/coba.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background: rgba(0, 0, 0, .3 ) url("../image/hmj/coba.png");
+  background-blend-mode: darken;
 }
 
 #contact #wadah{
@@ -686,7 +687,6 @@ Mission List Styling .mission-list {
 #bot {
   height: 30vh;
   width: 100%;
-  background-color: red;
 }
 
 #bot p {
@@ -701,25 +701,40 @@ Mission List Styling .mission-list {
 #bot .quicklinks {
   width: 375px;
   height: 100%;
-  background-color: green;
+  /* background-color: green; */
   justify-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: right;
+
+}
+#bot .quicklinks h4{
+    color: #000000;
 }
 
 #bot .quicklinks a {
   text-decoration: none;
+  color: #444444;
+}
+
+#bot .quicklinks a:hover {
+  color: blue;
 }
 
 #bot .sosmed {
   width: 370px;
   height: 100%;
-  background-color: yellow;
+  /* background-color: yellow; */
   justify-items: center;
   align-content: center;
+}
+
+#bot .sosmed h4{
+  color: #000000;
+  /* margin-bottom: px; */
 }
 
 #bot .sosmed .icon {
@@ -733,6 +748,13 @@ Mission List Styling .mission-list {
   height: 30px;
   align-content: center;
   text-align: center;
+  background-color: #000000;
+  margin: 0 5px 42px 5px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
 }
 
 #bot .sosmed .icon .canvas:hover {
@@ -767,19 +789,24 @@ Mission List Styling .mission-list {
   }
 }
 
-#bot .contactinfo p {
-  margin: 0;
-}
 #bot .contactinfo {
   width: 370px;
   height: 100%;
-  background-color: rgb(0, 255, 200);
   justify-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#bot .contactinfo h4 {
+  color: #000000;
+}
+
+#bot .contactinfo p {
+  margin: 0;
+  color: #444444;
 }
 
 .acsent-img {
@@ -797,6 +824,18 @@ Mission List Styling .mission-list {
 .acsent-img.visible {
   opacity: 1; /* Tampilkan gambar */
   transform: scale(1); /* Ukuran penuh */
+}
+
+.copyright .copyr{
+  height: 100px;
+  border-top: 1px solid #444444;
+  text-align: center;
+}
+
+.copyright .copyr p{
+  color: #000000;
+  font-size: 14px;
+  margin-top: 30px;
 }
 
 
