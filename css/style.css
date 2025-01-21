@@ -70,6 +70,11 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+#hero p {
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 17px;
+}
 /* 
 .img-hero {
   height: 70%;
@@ -118,11 +123,19 @@ body {
   width: 237px;
   height: 70px;
   background: white;
-  color: #000000;
-  border: none;
+  color: rgb(10, 0, 157);
+  border: 2px solid rgb(10, 0, 157);
   font-size: 20px;
   font-weight: 700;
   border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s; 
 }
 
 .hero {
@@ -635,7 +648,7 @@ Mission List Styling .mission-list {
   background-size: cover;
   background-repeat: no-repeat;
   background: rgba(0, 0, 0, .3 ) url("../image/hmj/coba.png");
-  background-blend-mode: darken;
+  background-blend-mode: darken;  
 }
 
 #contact #wadah{
@@ -682,6 +695,25 @@ Mission List Styling .mission-list {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+}
+
+#contact .buttoncontact button:hover{
+  background-color: #994ff3;
+  border: none  ;
+  background: #ffffff;
+  border: 2px solid #045e9b;
+  width: 180px;
+  height: 50px;
+  border-radius: 10px;
+  color: #045e9b;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 #bot {
@@ -807,6 +839,11 @@ Mission List Styling .mission-list {
 #bot .contactinfo p {
   margin: 0;
   color: #444444;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+#bot .contactinfo svg {
+  margin: 0 8px 3px 0;
 }
 
 .acsent-img {
@@ -823,8 +860,9 @@ Mission List Styling .mission-list {
 
 .acsent-img.visible {
   opacity: 1; /* Tampilkan gambar */
-  transform: scale(1); /* Ukuran penuh */
+  transform: scale(1); /* Uk uran penuh */
 }
+
 
 .copyright .copyr{
   height: 100px;
@@ -834,8 +872,87 @@ Mission List Styling .mission-list {
 
 .copyright .copyr p{
   color: #000000;
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
 }
 
+@media (max-width: 768px) {
+  .copyr p {
+    left: 0%; /* Adjust left margin for smaller screens */
+  }
+
+  .copyr p{
+  
+  }
+}
+
+@media (max-width: 480px) {
+  .copyr p {
+    left: 0%; /* Full width on very small screens */
+  }
+}
+
+.dep {
+  position: relative;
+  left: 50%; 
+}
+@media (max-width: 768px) {
+  .dep {
+    left: 0%; /* Adjust left margin for smaller screens */
+  }
+
+  .acsent-img{
+    display: none ;
+  }
+}
+
+@media (max-width: 480px) {
+  .dep {
+    left: 0%; /* Full width on very small screens */
+  }
+}
+
+#backToTop {
+  position: fixed;        
+  bottom: 20px;            
+  right: 20px;            
+  width: 65px;            
+  height: 65px;           
+  background-color: transparent;
+  cursor: pointer;        
+  display: none;           
+  justify-content: center; 
+  align-items: center;     
+  border: none;
+  opacity: 0;              
+  transform: scale(0.5);   
+  animation: fadeInUp 0.6s ease-out forwards; 
+}
+
+/* Animasi untuk kemunculan tombol */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);  
+  }
+}
+
+
+#backToTop i {
+  color: rgb(0, 4, 255); 
+  font-size: 50px; 
+  transition: color 0.3s ease; 
+}
+
+/* Efek hover pada tombol */
+#backToTop:hover i {
+  color: rgb(0, 255, 255); 
+  font-size: 50px; 
+  transition: color 0.3s ease; 
+}
 
