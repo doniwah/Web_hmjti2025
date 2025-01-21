@@ -31,27 +31,29 @@
 </head>
 
 <body>
-  <button id="backToTop">
+  <button id="backToTop" class="hide">
     <i class="bi bi-arrow-up-square-fill"></i>
     <script>
       const backToTopButton = document.getElementById("backToTop");
   
-      // Menampilkan tombol saat pengguna menggulir ke bawah
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 200) { // Jika pengguna menggulir lebih dari 200px
-          backToTopButton.style.display = "block";
-        } else {
-          backToTopButton.style.display = "none";
-        }
-      });
-  
-      // Fungsi untuk kembali ke atas
-      backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,           // Gulir ke posisi paling atas
-          behavior: "smooth" // Gulir dengan animasi halus
-        });
-      });
+    // Menampilkan atau menyembunyikan tombol berdasarkan posisi scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) { // Jika pengguna menggulir lebih dari 200px
+    backToTopButton.classList.add("show");
+    backToTopButton.classList.remove("hide");
+  } else {
+    backToTopButton.classList.add("hide");
+    backToTopButton.classList.remove("show");
+  }
+});
+
+// Fungsi untuk kembali ke atas
+backToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,           // Gulir ke posisi paling atas
+    behavior: "smooth" // Gulir dengan animasi halus
+  });
+});
     </script>
 
 </button>
@@ -74,16 +76,16 @@
             <a class="nav-link text-light text-dark" href="#about-section">Tentang</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link text-light text-dark" href="#">Kepengurusan</a>
+            <a class="nav-link text-light text-dark" href="#BKepengurusan">Kepengurusan</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link text-light text-dark" href="#">Kegiatan</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link text-light text-dark" href="#">Postingan</a>
+            <a class="nav-link text-light text-dark" href="#postingan">Postingan</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link text-light text-dark" href="#">Kontak</a>
+            <a class="nav-link text-light text-dark" href="#bot">Kontak</a>
           </li>
           <!-- <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
@@ -154,6 +156,7 @@
     </div>
   </section>
 
+  <section id="BKepengurusan">
   <div class="slider">
     <div class="list">
       <div class="item">
@@ -184,6 +187,7 @@
       <li></li>
     </ul>
   </div>
+</section>
 
   <!-- Section Departemen -->
   <section class="department-section" id="department">
@@ -250,7 +254,12 @@
       </div>
     </div>
   </section>
-
+  <section id="postingan">
+    <h5>Instagram Posts</h5>
+    <div class="ig-gallery">
+    </div>
+  </section>
+  
   <!-- Section Program -->
   <section id="Program">
     <div id="card-area">
@@ -259,8 +268,8 @@
           <div class="box">
             <img src="image/hmj/coba.png" alt="" />
             <div class="overlay">
-              <h3>Naufal ang ang</h3>
-              <p>nama saya adalah doni wahyudi yang tinggal di jember uahu hahaha ini coba</p>
+              <h3>Ketua Himpunan</h3>
+              <p>Saya Tiara Agustina Putri Wulandari selaku Ketua Himpunan</p>
               <a href="#">show more</a>
             </div>
           </div>
@@ -320,7 +329,7 @@
   </section>
 
   <!-- contact us -->
-  <section id="contact">
+  <section id="contact" style="background-image: url(image/gedungjti.jpg);">
     <div class="container h-100">
       <div class="row h-100" id="wadah">
         <span class="icontelp">
