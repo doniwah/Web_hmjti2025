@@ -254,11 +254,50 @@ backToTopButton.addEventListener("click", () => {
       </div>
     </div>
   </section>
-  <section id="postingan">
-    <h5>Instagram Posts</h5>
-    <div class="ig-gallery">
+
+  <!-- Postingan  -->
+
+  <div class="instagram-container">
+    <div class="post-header">
+        <img class="profile-pic" src="https://via.placeholder.com/32" alt="Profile Picture">
+        <a href="#" class="username">hmjti_polije</a>
+        <span class="post-time">• 1d</span>
+        <div class="more-options">•••</div>
     </div>
-  </section>
+    
+    <img class="post-image" src="path_to_your_image.jpg" alt="SOSIALISASI HMJ TI">
+    
+    <div class="post-actions">
+        <button class="action-button">
+            <!-- Heart icon (you can use SVG or font icons) -->
+            ♡
+        </button>
+        <button class="action-button">
+            <!-- Comment icon -->
+            💬
+        </button>
+        <button class="action-button">
+            <!-- Share icon -->
+            ↗️
+        </button>
+        <button class="action-button">
+            <!-- Bookmark icon -->
+            🔖
+        </button>
+    </div>
+    
+    <!-- Optional: Add likes count -->
+    <div class="post-likes">
+        0 likes
+    </div>
+    
+    <!-- Optional: Add caption -->
+    <div class="post-caption">
+        <strong>hmjti_polije</strong> After Report Sosialisasi HMJ TI
+    </div>
+</div>
+
+<!-- End Postingan -->
   
   <!-- Section Program -->
   <section id="Program">
@@ -384,6 +423,28 @@ backToTopButton.addEventListener("click", () => {
       <p>Copyright © 2025 HMJTI - All rights reserved.</p>
     </div>  
   </div>
+
+  <!-- Script Postingan -->
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script>
+      // Ganti dengan URL postingan Instagram yang sebenarnya
+      const postUrl = 'https://www.instagram.com/p/DFDEBxZTRoZ/?utm_source=ig_web_copy_link';
+      
+      // Fungsi untuk memuat postingan Instagram asli
+      async function loadInstagramPost() {
+          try {
+              const container = document.querySelector('.instagram-container');
+              container.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${postUrl}"></blockquote>`;
+              
+              if (window.instgrm) {
+                  window.instgrm.Embeds.process();
+              }
+          } catch (error) {
+              console.error('Error loading Instagram post:', error);
+          }
+      }
+  </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

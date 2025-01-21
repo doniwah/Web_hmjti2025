@@ -33,19 +33,17 @@ body {
 
 .navbar-scrolled .navbar-brand {
   font-size: 16px; /* Ukuran font setelah scroll */
-  color: #000000 ;
+  color: #000000;
 }
 
-.navbar-scrolled .navbar-brand:hover{
+.navbar-scrolled .navbar-brand:hover {
   font-size: 16px; /* Ukuran font setelah scroll */
   color: #000000;
 }
 
-
 .nav-link {
   font-size: 16px;
 }
-
 
 /* Hero Section */
 
@@ -67,7 +65,7 @@ body {
 }
 
 #hero p {
-  font-family: 'Lato', 'Arial', sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
   font-size: 17px;
 }
 /* 
@@ -130,7 +128,7 @@ body {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
-  -o-transition: all 0.5s; 
+  -o-transition: all 0.5s;
 }
 
 .hero {
@@ -185,15 +183,15 @@ body {
 
 .about-content .btn_selengkapnya {
   display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    background: blue  ;
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: blue;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .about-content .btn_selengkapnya:hover {
@@ -425,6 +423,91 @@ Mission List Styling .mission-list {
   text-decoration: none;
 }
 
+/* Postingan */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+.instagram-container {
+  max-width: 470px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+.post-header {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: 600;
+  color: #262626;
+  text-decoration: none;
+}
+
+.post-time {
+  color: #8e8e8e;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.more-options {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+}
+
+.post-actions {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-right: 16px;
+}
+
+.action-button:last-child {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.post-likes {
+  padding: 0 16px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.post-caption {
+  padding: 0 16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+/* end postingan */
+
 /* Program */
 
 .wrapper {
@@ -642,18 +725,18 @@ Mission List Styling .mission-list {
   margin-bottom: 20px;
   background-size: cover;
   background-repeat: no-repeat;
-  background: rgba(0, 0, 0, .3 ) url("../image/hmj/coba.png");
-  background-blend-mode: darken;  
+  background: rgba(0, 0, 0, 0.3) url("../image/hmj/coba.png");
+  background-blend-mode: darken;
 }
 
-#contact #wadah{
+#contact #wadah {
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
-#contact .icontelp{
+#contact .icontelp {
   width: 90px;
   height: 90px;
   background-color: blue;
@@ -666,21 +749,21 @@ Mission List Styling .mission-list {
   -o-border-radius: 10px;
 }
 
-#contact .contactinform{
+#contact .contactinform {
   margin: 30px 0px;
   width: 580px;
   text-align: center;
   color: white;
 }
 
-#contact .buttoncontact{
+#contact .buttoncontact {
   width: 250px;
   text-align: center;
 }
 
-#contact .buttoncontact button{
+#contact .buttoncontact button {
   background-color: #994ff3;
-  border: none  ;
+  border: none;
   background-color: blue;
   width: 180px;
   height: 50px;
@@ -692,9 +775,9 @@ Mission List Styling .mission-list {
   -o-border-radius: 10px;
 }
 
-#contact .buttoncontact button:hover{
+#contact .buttoncontact button:hover {
   background-color: #994ff3;
-  border: none  ;
+  border: none;
   background: #ffffff;
   border: 2px solid #045e9b;
   width: 180px;
@@ -736,10 +819,9 @@ Mission List Styling .mission-list {
   flex-wrap: wrap;
   justify-content: center;
   text-align: right;
-
 }
-#bot .quicklinks h4{
-    color: #000000;
+#bot .quicklinks h4 {
+  color: #000000;
 }
 
 #bot .quicklinks a {
@@ -759,7 +841,7 @@ Mission List Styling .mission-list {
   align-content: center;
 }
 
-#bot .sosmed h4{
+#bot .sosmed h4 {
   color: #000000;
   /* margin-bottom: px; */
 }
@@ -834,7 +916,7 @@ Mission List Styling .mission-list {
 #bot .contactinfo p {
   margin: 0;
   color: #444444;
-  font-family: 'Lato', 'Arial', sans-serif;
+  font-family: "Lato", "Arial", sans-serif;
 }
 
 #bot .contactinfo svg {
@@ -851,25 +933,24 @@ Mission List Styling .mission-list {
   opacity: 0; /* Gambar disembunyikan saat awal */
   transform: scale(0.5); /* Mulai dari ukuran kecil */
   transition: opacity 0.5s ease, transform 0.5s ease; /* Animasi transisi */
-} 
+}
 
 .acsent-img.visible {
   opacity: 1; /* Tampilkan gambar */
   transform: scale(1); /* Uk uran penuh */
 }
 
-
-.copyright .copyr{
+.copyright .copyr {
   height: 100px;
   border-top: 1px solid #444444;
   text-align: center;
 }
 
-.copyright .copyr p{
+.copyright .copyr p {
   color: #000000;
   font-size: 16px;
   margin-top: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -886,15 +967,15 @@ Mission List Styling .mission-list {
 
 .dep {
   position: relative;
-  left: 50%; 
+  left: 50%;
 }
 @media (max-width: 768px) {
   .dep {
     left: 0%; /* Adjust left margin for smaller screens */
   }
 
-  .acsent-img{
-    display: none ;
+  .acsent-img {
+    display: none;
   }
 }
 
@@ -905,24 +986,24 @@ Mission List Styling .mission-list {
 }
 
 #backToTop {
-  position: fixed;        
-  bottom: 20px;            
-  right: 20px;            
-  width: 65px;            
-  height: 65px;           
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
   background-color: transparent;
-  cursor: pointer;               
-  justify-content: center; 
+  cursor: pointer;
+  justify-content: center;
   z-index: 3;
-  align-items: center;     
+  align-items: center;
   border: none;
-  opacity: 0;              
-  transform: scale(0.5);   
+  opacity: 0;
+  transform: scale(0.5);
 }
 
 #backToTop.show {
   display: flex; /* Tampilkan tombol */
-  animation: fadeInUp 0.6s ease-out forwards; 
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
 #backToTop.hide {
@@ -937,7 +1018,7 @@ Mission List Styling .mission-list {
   }
   100% {
     opacity: 1;
-    transform: scale(1);  
+    transform: scale(1);
   }
 }
 
@@ -954,26 +1035,26 @@ Mission List Styling .mission-list {
 }
 
 #backToTop i {
-  color: rgb(0, 4, 255); 
-  font-size: 50px; 
-  transition: color 0.3s ease; 
+  color: rgb(0, 4, 255);
+  font-size: 50px;
+  transition: color 0.3s ease;
 }
 
 /* Efek hover pada tombol */
 #backToTop:hover i {
-  color: rgb(0, 255, 255); 
-  font-size: 50px; 
-  transition: color 0.3s ease; 
+  color: rgb(0, 255, 255);
+  font-size: 50px;
+  transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-item.active .nav-link {
-  border-bottom: 2px solid #000000;  /* Anda bisa sesuaikan warna dan ketebalan garis */
-  font-weight: bold;  /* Opsional: untuk memberi penekanan pada link */
+  border-bottom: 2px solid #000000; /* Anda bisa sesuaikan warna dan ketebalan garis */
+  font-weight: bold; /* Opsional: untuk memberi penekanan pada link */
 }
 
 #contact {
   position: relative; /* Menambahkan posisi relatif untuk menempatkan elemen pseudo */
-  background-image: url('path_to_your_image.jpg'); /* Ganti dengan path gambar Anda */
+  background-image: url("path_to_your_image.jpg"); /* Ganti dengan path gambar Anda */
   background-repeat: no-repeat; /* Memastikan gambar tidak terduplikat */
   background-position: center; /* Menempatkan gambar di tengah */
   background-size: cover; /* Mengisi seluruh section */
@@ -985,7 +1066,7 @@ Mission List Styling .mission-list {
 }
 
 #contact::before {
-  content: ''; /* Menambahkan konten kosong */
+  content: ""; /* Menambahkan konten kosong */
   position: absolute; /* Memposisikan elemen pseudo di atas gambar */
   top: 0;
   left: 0;
@@ -995,10 +1076,11 @@ Mission List Styling .mission-list {
   z-index: 1; /* Menempatkan elemen pseudo di atas gambar */
 }
 
-#contact h1, #contact .buttoncontact, #contact .icontelp {
+#contact h1,
+#contact .buttoncontact,
+#contact .icontelp {
   z-index: 2; /* Menempatkan konten seperti teks, tombol, dan gambar telepon di atas lapisan gelap */
 }
-
 
 /* Section Styling */
 #postingan {
@@ -1106,4 +1188,3 @@ Mission List Styling .mission-list {
   z-index: 10;
   cursor: pointer;
 }
-
