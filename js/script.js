@@ -39,43 +39,243 @@ window.addEventListener('scroll', function () {
   });
 });
 
-const token = "IGAAISlNSW8edBZAE1CUXRMX05kOWNCcEsyVjJMUF9rYnZAvRGpEeHFQN0RuMlBRWUZAYNjU5T0lEQi16dUNXS3h1UFczNFZAlNE56Um1pclpmWWtkaFpuMVBwOVphY2dya0szWlJrVHRmLV9EUHR0T0FpYk9LVk52REdWT05iajVKawZDZD";
-const userId = "17841452108913648"; // Ganti dengan User ID
-const url = `https://graph.instagram.com/${userId}/media?fields=id,media_type,media_url,caption,permalink&access_token=${token}`;
+// ARTIKEL
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    
+    let currentSlide = 0;
 
-// Ambil data postingan Instagram
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data); // Menampilkan data respons dari API untuk debugging
-    const gallery = document.querySelector('.ig-gallery');
-    if (data && data.data) {
-      data.data.forEach(post => {
-        if (post.media_type === 'IMAGE' || post.media_type === 'CAROUSEL_ALBUM') {
-          const postElement = document.createElement('div');
-          postElement.classList.add('ig-post');
-          postElement.innerHTML = `
-            <img src="${post.media_url}" alt="Instagram Post" />
-            <div class="actions">
-              <button class="like">❤️</button>
-              <button class="comment">💬</button>
-              <button class="share">🔗</button>
-            </div>
-            <p class="caption">${post.caption || 'No caption available'}</p>
-            <div class="link" onclick="window.open('${post.permalink}', '_blank');"></div>
-          `;
-          gallery.appendChild(postElement);
-        }
-      });
-    } else {
-      gallery.innerHTML = '<p>No Instagram posts available.</p>';
+    function goToSlide(index) {
+      currentSlide = index;
+      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentSlide].classList.add('active');
     }
-  })
-  .catch(error => {
-    console.error('Error fetching Instagram posts:', error);
-  });
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      goToSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      goToSlide(currentSlide);
+    }
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+
+      // Data artikel
+      const articles = [
+        {
+          image: 'path/ke/gambar1.jpg',
+          author: 'AdminWeb',
+          date: '25 Maret 2024',
+          category: 'Kajian',
+          title: 'Pentingnya Partisipasi dalam...',
+          excerpt: 'Partisipasi dalam organisasi di kampus merupakan salah satu aspek penting...'
+        },
+        {
+          image: 'path/ke/gambar2.jpg',
+          author: 'AdminWeb',
+          date: '25 Maret 2024',
+          category: 'Beasiswa',
+          title: '[INFO BEASISWA]',
+          excerpt: 'Selamat siang, FEB UI! Adkesma kembali hadir membawa info beasiswa...'
+        },
+        // Tambahkan artikel lainnya di sini
+      ];
 
 
+      // TIMELINE KEGIATAN
+      document.addEventListener("DOMContentLoaded", () => {
+        const todayBtn = document.getElementById("todayBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const monthViewBtn = document.getElementById("monthViewBtn");
+        const weekViewBtn = document.getElementById("weekViewBtn");
+        const dayViewBtn = document.getElementById("dayViewBtn");
+        const calendar = document.getElementById("calendar");
+        const currentViewTitle = document.getElementById("currentViewTitle");
+        const viewTitle = document.getElementById("viewTitle");
+      
+        let currentDate = new Date();
+        let currentView = "month";
+      
+        const renderCalendar = () => {
+          calendar.innerHTML = "";
+          if (currentView === "month") {
+            viewTitle.textContent = "Monthly View";
+            renderMonthView();
+          } else if (currentView === "week") {
+            viewTitle.textContent = "Weekly View";
+            renderWeekView();
+          } else if (currentView === "day") {
+            viewTitle.textContent = "Daily View";
+            renderDayView();
+          }
+        };
+      
+        const renderMonthView = () => {
+          currentViewTitle.textContent = currentDate.toLocaleDateString("en-US", {
+            month: "long",
+            year: "numeric",
+          });
+          const daysInMonth = new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth() + 1,
+            0
+          ).getDate();
+          const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          const monthDiv = document.createElement("div");
+          monthDiv.className = "month";
+      
+          // Render Day Names (Sun, Mon, ...)
+          dayNames.forEach((day) => {
+            const dayHeader = document.createElement("div");
+            dayHeader.className = "day-header";
+            dayHeader.textContent = day;
+            monthDiv.appendChild(dayHeader);
+          });
+      
+          // Render Days of the Month
+          for (let day = 1; day <= daysInMonth; day++) {
+            const dayDiv = document.createElement("div");
+            dayDiv.className = "day";
+            dayDiv.textContent = day;
+            monthDiv.appendChild(dayDiv);
+          }
+      
+          calendar.appendChild(monthDiv);
+        };
+      
+        const renderWeekView = () => {
+          const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+          const weekDiv = document.createElement("div");
+          weekDiv.className = "week";
+      
+          // Header untuk nama hari, tanggal, bulan, tahun
+          const headerRow = document.createElement("div");
+          headerRow.className = "header-row";
+      
+          let startOfWeek = currentDate.getDate() - currentDate.getDay(); // Hari pertama minggu ini
+          dayNames.forEach((day, index) => {
+            const dayHeader = document.createElement("div");
+            dayHeader.className = "day-header";
+            const currentDay = new Date(
+              currentDate.getFullYear(),
+              currentDate.getMonth(),
+              startOfWeek + index
+            );
+            dayHeader.textContent = `${day}, ${currentDay.getDate()}/${
+              currentDay.getMonth() + 1
+            }/${currentDay.getFullYear()}`;
+            headerRow.appendChild(dayHeader);
+          });
+          weekDiv.appendChild(headerRow);
+      
+          // All-Day Section
+          const allDaySection = document.createElement("div");
+          allDaySection.className = "all-day";
+          for (let hour = 0; hour < 24; hour++) {
+            const timeSlot = document.createElement("div");
+            timeSlot.className = "time-slot";
+            timeSlot.textContent = `${hour % 12 || 12} ${
+              hour < 12 ? "AM" : "PM"
+            }`; // Format waktu
+            allDaySection.appendChild(timeSlot);
+          }
+          weekDiv.appendChild(allDaySection);
+      
+          calendar.appendChild(weekDiv);
+        };
+      
+        const renderDayView = () => {
+          const dayDiv = document.createElement("div");
+          dayDiv.className = "day-view";
+      
+          // Menambahkan bagian header dengan nama hari
+          const dayHeader = document.createElement("div");
+          dayHeader.className = "day-header";
+          dayHeader.textContent = currentDate.toLocaleDateString("en-US", {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric",
+          });
+          dayDiv.appendChild(dayHeader);
+      
+          // Tambahkan bagian All-Day
+          const allDaySection = document.createElement("div");
+          allDaySection.className = "all-day";
+          for (let hour = 0; hour < 24; hour++) {
+            const timeSlot = document.createElement("div");
+            timeSlot.className = "time-slot";
+            timeSlot.textContent = `${hour % 12 || 12} ${hour < 12 ? "AM" : "PM"}`;
+            allDaySection.appendChild(timeSlot);
+          }
+      
+          dayDiv.appendChild(allDaySection);
+      
+          calendar.appendChild(dayDiv);
+        };
+      
+        todayBtn.addEventListener("click", () => {
+          currentDate = new Date(); // Kembali ke hari ini
+          currentView = "month"; // Tampilkan dalam mode bulan
+          renderCalendar();
+        });
+      
+        prevBtn.addEventListener("click", () => {
+          if (currentView === "month") {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+          } else if (currentView === "week") {
+            currentDate.setDate(currentDate.getDate() - 7);
+          } else if (currentView === "day") {
+            currentDate.setDate(currentDate.getDate() - 1);
+          }
+          renderCalendar();
+        });
+      
+        nextBtn.addEventListener("click", () => {
+          if (currentView === "month") {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+          } else if (currentView === "week") {
+            currentDate.setDate(currentDate.getDate() + 7);
+          } else if (currentView === "day") {
+            currentDate.setDate(currentDate.getDate() + 1);
+          }
+          renderCalendar();
+        });
+      
+        monthViewBtn.addEventListener("click", () => {
+          currentView = "month";
+          renderCalendar();
+        });
+      
+        weekViewBtn.addEventListener("click", () => {
+          currentView = "week";
+          renderCalendar();
+        });
+      
+        dayViewBtn.addEventListener("click", () => {
+          currentView = "day";
+          renderCalendar();
+        });
+      
+        renderCalendar();
+      });
+      
+      
+      
 
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll(".navbar-nav a");

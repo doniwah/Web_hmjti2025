@@ -45,6 +45,17 @@ body {
   font-size: 16px;
 }
 
+.nav-item.active .nav-link {
+  border-bottom: 2px solid #000000; /* Warna dan ketebalan garis untuk link aktif */
+  font-weight: bold; /* Penekanan pada link aktif */
+  transition: border-bottom 0.1s ease, font-weight 0.1s ease; /* Transisi untuk efek hover */
+}
+
+.nav-link:hover {
+  font-weight: bold; 
+  transition: border-bottom 0.1s ease, font-weight 0.1s ease;
+ }
+
 /* Hero Section */
 
 /* #hero { */
@@ -918,34 +929,36 @@ Mission List Styling .mission-list {
 
 #backToTop.show {
   display: flex; /* Tampilkan tombol */
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.6s ease-out forwards; /* Animasi muncul dari bawah ke atas */
+  border: none;
 }
 
 #backToTop.hide {
-  animation: fadeOutDown 0.6s ease-out forwards;
+  animation: fadeOutDown 0.6s ease-out forwards; /* Animasi hilang dari atas ke bawah */
+  border: none;
 }
 
-/* Animasi untuk kemunculan tombol */
+/* Animasi untuk kemunculan tombol (dari bawah ke atas) */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(100%); /* Mulai dari di bawah layar */
   }
   100% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0); /* Berhenti di posisi awal */
   }
 }
 
-/* Animasi untuk menghilangkan tombol */
+/* Animasi untuk menghilangkan tombol (dari atas ke bawah) */
 @keyframes fadeOutDown {
   0% {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0); /* Mulai dari posisi awal */
   }
   100% {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(100%); /* Bergerak ke bawah layar */
   }
 }
 
@@ -957,15 +970,12 @@ Mission List Styling .mission-list {
 
 /* Efek hover pada tombol */
 #backToTop:hover i {
-  color: rgb(0, 255, 255);
+  color: #00734f;
   font-size: 50px;
   transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-item.active .nav-link {
-  border-bottom: 2px solid #000000; /* Anda bisa sesuaikan warna dan ketebalan garis */
-  font-weight: bold; /* Opsional: untuk memberi penekanan pada link */
-}
+
 
 #contact {
   position: relative; /* Menambahkan posisi relatif untuk menempatkan elemen pseudo */
@@ -987,7 +997,7 @@ Mission List Styling .mission-list {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Efek gelap (ubah nilai 0.4 untuk intensitas) */
+  background-color: rgba(0, 0, 0, 0.6); /* Efek gelap (ubah nilai 0.4 untuk intensitas) */
   z-index: 1; /* Menempatkan elemen pseudo di atas gambar */
 }
 
@@ -1010,96 +1020,373 @@ Mission List Styling .mission-list {
   color: #444;
 }
 
-/* Styling untuk galeri Instagram */
-.ig-gallery {
+.animasiig {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  padding: 20px;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-left: 10px;
 }
 
-/* Styling untuk setiap postingan */
-.ig-post {
-  width: 100%;
-  max-width: 400px; /* Lebar maksimum */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+/* Responsif untuk gambar embed Instagram */
+.instagram-media {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Pastikan lebar maksimal adalah 100% agar gambar fleksibel */
+  max-width: 400px; /* Ukuran maksimal pada perangkat besar */
+  min-width: 250px; /* Ukuran minimal saat perangkat lebih kecil */
+}
+
+/* Efek zoom saat hover */
+.instagram-media:hover {
+  transform: scale(1.1); /* Zoom pada elemen */
+  z-index: 1;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek depth */
+}
+
+
+/* ARTIKEL */
+.featured-articles {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.slider-container {
   position: relative;
+  overflow: hidden;
 }
 
-/* Styling gambar Instagram */
-.ig-post img {
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  padding: 0 1rem;
+}
+
+.article-card {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.article-image {
   width: 100%;
-  height: auto;
+  height: 300px;
   object-fit: cover;
-  display: block;
 }
 
-/* Kontainer untuk teks dan ikon interaksi */
-.ig-post .actions {
-  background-color: #fff;
-  padding: 10px;
+.article-content {
+  padding: 1.5rem;
+}
+
+.article-meta {
+  display: flex;
+  gap: 1rem;
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.article-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prev { left: 1rem; }
+.next { right: 1rem; }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #3b82f6;
+}
+
+.learn-more {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.75rem 2rem;
+  background: #015ca2;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.learn-more:hover {
+  background: #00734f;
+}
+
+
+
+/* TIMELINE KEGIATAN */
+
+.container1 {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex: 1;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+}
+
+.calendar-container {
+  flex: 2;
+  max-width: 600px; /* Ukuran tabel diperkecil */
+  padding: 15px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 80px;
+  margin-right: 200px; /* Bergeser ke kanan */
+}
+
+.calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.calendar-header button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-header button:hover {
+  background-color: #218838;
+}
+
+.calendar-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .container1 {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .image-container img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .calendar-container {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.view-buttons button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.calendar {
+  font-size: 12px;
+}
+
+.calendar .month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 10px; /* Mengurangi padding */
+}
+
+.calendar .month .day-header {
+  text-align: center;
+  font-weight: bold;
+  background-color: #f1f1f1;
+  padding: 5px;
+}
+
+.calendar .month .day {
+  padding: 8px; /* Ukuran lebih kecil */
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-size: 12px; /* Font diperkecil */
+}
+
+.calendar .week {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calendar .week .header-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #f1f1f1;
+  padding: 8px; /* Padding diperkecil */
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.calendar .week .header-row .day-header {
+  text-align: center;
+  flex: 1;
+  font-size: 12px; /* Font diperkecil */
+}
+
+.calendar .week .all-day {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px; /* Padding diperkecil */
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  overflow-y: auto;
+}
+
+.calendar .week .time-slot {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+.calendar .day-view {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Rasio kolom sedikit diubah */
+  gap: 5px;
+  padding: 10px;
+}
+
+.calendar .day-view .all-day {
+  grid-column: span 2;
+  text-align: center;
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 8px; /* Padding diperkecil */
+}
+
+.calendar .day-view .time-slot {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  background-color: #f9f9f9;
+  font-size: 12px; /* Font diperkecil */
+}
+
+/* Section All-Day hanya menampilkan hari untuk tabel day */
+.all-day {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px; /* Menambahkan scroll jika All-Day memanjang */
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.all-day .time-slot {
+  text-align: left;
+  padding: 8px; /* Padding lebih kecil */
   border-bottom: 1px solid #ddd;
 }
 
-/* Styling untuk caption */
-.ig-post .caption {
+.all-day .day-header {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+/* Tabel Month dengan scroll horizontal */
+.calendar .month {
+  max-width: 100%;
+  overflow-x: auto; /* Scroll horizontal untuk month */
+}
+
+.view-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 14px; /* Font lebih kecil */
+  margin-top: 15px;
+}
+
+/* Filter by Category */
+.filter-category {
+  margin-top: 10px;
   padding: 10px;
-  font-size: 14px;
-  color: #333;
-  text-align: left;
-  overflow: hidden;
-  max-height: 60px;
-  text-overflow: ellipsis;
+  background-color: #f1f1f1;
+  border-radius: 6px;
 }
 
-/* Styling untuk Like, Comment dan Share */
-.ig-post .actions button {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.3s ease, transform 0.3s ease;
+.filter-category h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
 }
 
-.ig-post .actions button:hover {
-  color: #e50914;
-  transform: scale(1.1); /* Efek zoom saat hover */
-}
-
-.ig-post .actions button.like:hover {
-  color: #e50914;
-}
-
-.ig-post .actions button.comment:hover {
-  color: #0077b5;
-}
-
-.ig-post .actions button.share:hover {
-  color: #000;
-}
-
-/* Efek tampilan saat scroll */
-.ig-post.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Styling untuk tombol yang mengarahkan ke Instagram */
-.ig-post .link {
-  position: absolute;
-  top: 0;
-  left: 0;
+.filter-category select {
   width: 100%;
-  height: 100%;
-  z-index: 10;
-  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Menghapus timeline kegiatan 2025 */
+.timeline {
+  display: none; /* Menyembunyikan bagian timeline kegiatan */
 }
