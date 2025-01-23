@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    height: 900px; /* Mengatur tinggi body menjadi 900px */
-    overflow-x: hidden;
+    height: 100%; /* Mengatur tinggi body menjadi 900px */
+    margin: 0;
+    padding: 0;
+  
 }
 
 
@@ -20,9 +23,6 @@ body {
     margin: 0 auto;
     text-align: center;
 }
-
-
-
 
 /* Hero Section */
 /* #hero {
@@ -58,11 +58,13 @@ body {
   
   .navbar-scrolled .navbar-brand {
     font-size: 16px; /* Ukuran font setelah scroll */
-    color: #000000;
+    font-weight: 700;
+    color: #000000 !important;
   }
   
   .navbar-scrolled .navbar-brand:hover {
     font-size: 16px; /* Ukuran font setelah scroll */
+    font-weight: 700;
     color: #000000;
   }
   
@@ -81,6 +83,7 @@ body {
     transition: border-bottom 0.1s ease, font-weight 0.1s ease;
    }
   
+  
 
 #hero h1 {
     font-size: 3rem;
@@ -94,30 +97,67 @@ body {
     text-align: center;
 }
 
-#hero h1 {
-    margin-top: 200px;
-    animation: slideDown 0.8s ease-out; /* Animasi geser ke bawah */
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.yy {
-    margin-top: 50px;
-    animation: slideDown 0.8s ease-out; /* Animasi geser ke bawah */
-}
-
+#Hero {
+    /* background: linear-gradient(to bottom, transparent 0%, transparent 10%, #ffffff 100%), url("../image/foto_bersama.jpg") bottom right/contain no-repeat; */
+    background: linear-gradient(to bottom, #557dff 5%, #ffffff 90%);
+    /* background-image: url("../image/hmj/unnamed\ qq.png");
+    background-color: antiquewhite; */
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
 #hero p {
     font-size: 1.5rem;
 }
+
+
+#backToTop {
+    position: fixed;
+    bottom: -300px;
+    right: 30px;
+    width: 10px;
+    height: -300px;
+    background-color: transparent;
+    cursor: pointer;
+    justify-content: center;
+    z-index: 3;
+    align-items: center;
+    border: none;
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  
+  #backToTop.show {
+    display: flex; /* Tampilkan tombol */
+    animation: fadeInUp 0.9s ease-out forwards; /* Animasi muncul dari bawah ke atas */
+    border: none;
+  }
+
+  
+ /* Animasi untuk kemunculan tombol (dari bawah ke atas) */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100%); /* Mulai dari di bawah layar */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Berhenti di posisi awal */
+    }
+  }
+  
+  #backToTop i {
+    color: rgb(0, 4, 255);
+    font-size: 50px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Efek hover pada tombol */
+  #backToTop:hover i {
+    color: #00734f;
+    font-size: 50px;
+    transition: color 0.3s ease;
+  }
 
 /* Departemen Section */
 #departemen {
@@ -146,8 +186,11 @@ body {
 
 #slider .section-title {
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-top: 50px;
     text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .slider-container {
@@ -234,23 +277,27 @@ button {
 }
 
 #program-kerja h2 {
-    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 40px;
     margin-bottom: 50px;
 }
 
 .program-cards {
+    color: white;
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+    
 }
 
 .card {
-    background-color: white; /* Latar belakang putih */
+    background-color: rgb(0, 0, 0); /* Latar belakang putih */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.39);
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     position: relative;
     transition: transform 0.3s ease; /* Menambahkan transisi */
@@ -261,6 +308,7 @@ button {
 }
 
 .card-info {
+    background: linear-gradient(to bottom, #557dff 5%, #ffffff8e 95%);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -290,10 +338,11 @@ button {
     left: 0; /* Menempatkan di kiri kartu */
     right: 0;
     bottom: 0;
+    border-radius: 10px;
     background-image: url(image/gedungjti.jpg); /* Ganti dengan gambar yang sesuai */
     background-size: cover;
     background-position: center;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex; /* Menggunakan flexbox untuk memastikan teks berada di tengah */
     justify-content: center;
     align-items: center;
@@ -322,3 +371,251 @@ button {
     padding: 0 20px; /* Memberikan jarak di sisi kiri dan kanan */
 }
 
+
+/* CONTACT INFO */
+
+
+#contact {
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, 0.3) url("../image/hmj/coba.png");
+    background-blend-mode: darken;
+  }
+  
+  #contact #wadah {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #contact .icontelp {
+    width: 90px;
+    height: 90px;
+    background-color: blue;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  #contact .contactinform {
+    margin: 30px 0px;
+    width: 580px;
+    text-align: center;
+    color: white;
+  }
+  
+  #contact .buttoncontact {
+    width: 250px;
+    text-align: center;
+  }
+  
+  #contact .buttoncontact button {
+    background-color: #994ff3;
+    border: none;
+    background-color: blue;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  #contact .buttoncontact button:hover {
+    background-color: #994ff3;
+    border: none;
+    background: #ffffff;
+    border: 2px solid #045e9b;
+    width: 180px;
+    height: 50px;
+    border-radius: 10px;
+    color: #045e9b;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  }
+
+  #bot .contactinfo {
+    width: 370px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan elemen secara vertikal */
+  }
+  
+  #bot .contactinfo h4 {
+    color: #000000;
+    margin-bottom: 10px; /* Tambahkan jarak untuk pemisahan visual */
+  }
+  
+  #bot .contactinfo p {
+    margin: 5px 0; /* Jarak vertikal antar paragraf */
+    display: flex; /* Aktifkan Flexbox untuk menyusun isi dalam baris */
+    align-items: center; /* Sejajarkan elemen secara vertikal */
+    color: #444444 bold;
+    font-family: "Lato", "Arial", sans-serif;
+  }
+  
+  #bot .contactinfo svg {
+    margin-right: 10px; /* Jarak ikon dengan teks */
+    flex-shrink: 0; /* Cegah ikon menyusut jika teks terlalu panjang */
+    margin-left: 120px;
+  }
+  
+
+#contact {
+    position: relative; /* Menambahkan posisi relatif untuk menempatkan elemen pseudo */
+    background-image: url("path_to_your_image.jpg"); /* Ganti dengan path gambar Anda */
+    background-repeat: no-repeat; /* Memastikan gambar tidak terduplikat */
+    background-position: center; /* Menempatkan gambar di tengah */
+    background-size: cover; /* Mengisi seluruh section */
+    height: 100vh; /* Memastikan section mengisi seluruh layar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Warna teks agar tetap terlihat */
+  }
+  
+  #contact::before {
+    content: ""; /* Menambahkan konten kosong */
+    position: absolute; /* Memposisikan elemen pseudo di atas gambar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Efek gelap (ubah nilai 0.4 untuk intensitas) */
+    z-index: 1; /* Menempatkan elemen pseudo di atas gambar */
+  }
+  
+  #contact h1,
+  #contact .buttoncontact,
+  #contact .icontelp {
+    z-index: 2; /* Menempatkan konten seperti teks, tombol, dan gambar telepon di atas lapisan gelap */
+  }
+
+  #bot {
+  margin-left: 200px;
+  margin-top: 50px;
+  }
+  
+  
+#bot .quicklinks {
+    width: 375px;
+    height: 100%;
+    /* background-color: green; */
+    justify-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+  }
+  #bot .quicklinks h4 {
+    color: #000000;
+  }
+  
+  #bot .quicklinks a {
+    text-decoration: none;
+    color: #444444;
+  }
+  
+  #bot .quicklinks a:hover {
+    color: blue;
+  }
+
+  
+#bot .sosmed {
+    width: 370px;
+    height: 100%;
+    /* background-color: yellow; */
+    justify-items: center;
+    align-content: center;
+  }
+  
+  #bot .sosmed h4 {
+    color: #000000;
+    /* margin-bottom: px; */
+  }
+  
+  #bot .sosmed .icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  #bot .sosmed .icon .canvas {
+    width: 30px;
+    height: 30px;
+    align-content: center;
+    text-align: center;
+    background-color: #000000;
+    margin: 0 5px 42px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+  }
+  
+  #bot .sosmed .icon .canvas:hover {
+    animation: zoom-in-zoom-out 0.5s ease;
+    -webkit-animation: zoom-in-zoom-out 0.5s ease;
+    width: 30px;
+    height: 30px;
+    background-color: #0c52e7;
+  }
+  
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+    }
+  }
+
+  
+.copyright .copyr {
+    height: 100px;
+    border-top: 1px solid #444444;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .copyright .copyr p {
+    color: #000000;
+    font-size: 16px;
+    margin-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
