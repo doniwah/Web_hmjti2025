@@ -38,13 +38,15 @@ body {
     cursor: pointer;
 }
 
-.berita #con {
-    width: 100%;
-    height: 160vh;
+.berita .container-fluid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .cardarea {
-    margin: 0;
+    margin: 0 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -136,9 +138,10 @@ body {
 
 .cardarea .card .description p {
     display: -webkit-box;
-  -webkit-box-orient: vertical; 
-  overflow: hidden;
-  margin: 0;  
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .pagination-container {
