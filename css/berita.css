@@ -164,5 +164,5 @@ body {
     border-radius: 4px;
 }
 .pagination-btn:disabled {
-    /* background-color: #cccccc; */
+    color: #cccccc;
 }
