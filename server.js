@@ -7,6 +7,7 @@ app.set("view engine", "ejs")
 app.set("views", "views")
 
 app.use(express.static('css'));
+app.use(express.static('image'));
 app.use('/images', express.static('images'))
 
 const db = mysql.createConnection({

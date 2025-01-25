@@ -132,8 +132,8 @@ body {
 .cardarea .card .description h4 {
     margin-top: 15px;
     display: -webkit-box;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .cardarea .card .description p {
@@ -141,7 +141,7 @@ body {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis; 
+    text-overflow: ellipsis;
 }
 
 .pagination {
@@ -150,10 +150,12 @@ body {
     align-items: center;
     margin-top: 20px;
 }
+
 .pagination-info {
     margin: 0 15px;
     font-weight: bold;
 }
+
 .pagination-btn {
     background-color: white;
     color: blue;
@@ -163,6 +165,152 @@ body {
     cursor: pointer;
     border-radius: 4px;
 }
+
 .pagination-btn:disabled {
     color: #cccccc;
+}
+
+#bot {
+    height: 30vh;
+    width: 100%;
+}
+
+#bot p {
+    font-weight: 600;
+    font-family: sans-serif;
+}
+
+#bot .main {
+    justify-content: space-around;
+}
+
+#bot .quicklinks {
+    width: 375px;
+    height: 100%;
+    /* background-color: green; */
+    justify-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: right;
+}
+
+#bot .quicklinks h4 {
+    color: #000000;
+}
+
+#bot .quicklinks a {
+    text-decoration: none;
+    color: #444444;
+}
+
+#bot .quicklinks a:hover {
+    color: blue;
+}
+
+#bot .sosmed {
+    width: 370px;
+    height: 100%;
+    /* background-color: yellow; */
+    justify-items: center;
+    align-content: center;
+}
+
+#bot .sosmed h4 {
+    color: #000000;
+    /* margin-bottom: px; */
+}
+
+#bot .sosmed .icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#bot .sosmed .icon .canvas {
+    width: 30px;
+    height: 30px;
+    align-content: center;
+    text-align: center;
+    background-color: #000000;
+    margin: 0 5px 42px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#bot .sosmed .icon .canvas:hover {
+    animation: zoom-in-zoom-out 0.5s ease;
+    -webkit-animation: zoom-in-zoom-out 0.5s ease;
+    width: 30px;
+    height: 30px;
+    background-color: #0c52e7;
+}
+
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+
+#bot .contactinfo {
+    width: 370px;
+    height: 100%;
+    justify-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#bot .contactinfo h4 {
+    color: #000000;
+}
+
+#bot .contactinfo p {
+    margin: 0;
+    color: #444444;
+    font-family: "Lato", "Arial", sans-serif;
+}
+
+#bot .contactinfo svg {
+    margin: 0 8px 3px 0;
+}
+
+.copyright .copyr {
+    height: 100px;
+    border-top: 1px solid #444444;
+    text-align: center;
+}
+
+.copyright .copyr p {
+    color: #000000;
+    font-size: 16px;
+    margin-top: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
