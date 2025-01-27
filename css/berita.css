@@ -175,6 +175,10 @@ body {
     width: 100%;
 }
 
+#bot .container {
+    border-top: 1px solid black ;
+}
+
 #bot p {
     font-weight: 600;
     font-family: sans-serif;
@@ -182,6 +186,7 @@ body {
 
 #bot .main {
     justify-content: space-around;
+    height: 230px;
 }
 
 #bot .quicklinks {
@@ -314,3 +319,64 @@ body {
     margin-top: 30px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@media screen and (max-width: 450px) {
+    #navbar #pilihan span {
+        margin: 0px 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    #bot {  
+        height: 400px;
+        /* background: blueviolet; */
+        width: 100%;
+        /* background-color: aqua; */
+    }
+
+    #bot .container{
+        border: none;
+    }
+
+    #bot .main {
+        height: 400px;
+        font-size: 16px;
+        /* background-color: #0c52e7; */
+    }
+
+    #bot .quicklinks {
+        height: auto;
+         /* background-color: green;  */
+        justify-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #bot .sosmed {
+        height: auto;
+        /* background-color: yellow;  */
+        justify-items: center;
+        align-content: center;
+    }
+
+    #bot .sosmed .icon .canvas {
+        margin: 0px 3px;
+    }
+
+    #bot .contactinfo {
+        height: auto;
+        justify-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        /* background-color: blueviolet; */
+    }
+ }
+ 
