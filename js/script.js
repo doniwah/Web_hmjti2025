@@ -10,7 +10,104 @@ document.addEventListener("scroll", function () {
   }
 });
 
-const navLinks = document.querySelectorAll(".navbar-nav a");
+// BKPENGURUSAN
+// BKPENGURUSAN
+let currentIndex = 0;
+const items = document.querySelectorAll('.item');
+const dots = document.querySelectorAll('.dots li');
+const totalItems = items.length;
+let slideInterval;
+const intervalTime = 3000; // Waktu pergantian slide (dalam milidetik)
+
+function toggleSlide(newIndex, direction = 1) {
+    if (newIndex === currentIndex) return;
+    
+    const currentItem = items[currentIndex];
+    const nextItem = items[newIndex];
+    
+    currentItem.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
+    nextItem.style.transition = 'transform 0.5s ease-in-out, opacity 0.5s ease-in-out';
+    
+    currentItem.style.transform = `translateX(${direction * -100}%)`;
+    currentItem.style.opacity = '0';
+    
+    nextItem.style.display = 'block';
+    nextItem.style.transform = `translateX(${direction * 100}%)`;
+    nextItem.style.opacity = '0';
+    
+    setTimeout(() => {
+        nextItem.style.opacity = '1';
+        nextItem.style.transform = 'translateX(0)';
+    }, 10);
+    
+    setTimeout(() => {
+        currentItem.style.display = 'none';
+    }, 500);
+    
+    dots[currentIndex].classList.remove('active');
+    dots[newIndex].classList.add('active');
+    
+    currentIndex = newIndex;
+}
+
+function nextSlide() {
+    let newIndex = (currentIndex + 1) % totalItems;
+    toggleSlide(newIndex, 1);
+}
+
+function prevSlide() {
+    let newIndex = (currentIndex - 1 + totalItems) % totalItems;
+    toggleSlide(newIndex, -1);
+}
+
+function startAutoSlide() {
+    if (slideInterval) {
+        clearInterval(slideInterval);
+    }
+    slideInterval = setInterval(nextSlide, intervalTime);
+}
+
+function stopAutoSlide() {
+    clearInterval(slideInterval);
+}
+
+document.getElementById('next').addEventListener('click', () => {
+    nextSlide();
+    stopAutoSlide();
+    startAutoSlide();
+});
+
+document.getElementById('prev').addEventListener('click', () => {
+    prevSlide();
+    stopAutoSlide();
+    startAutoSlide();
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        const direction = index > currentIndex ? 1 : -1;
+        toggleSlide(index, direction);
+        stopAutoSlide();
+        startAutoSlide();
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    items.forEach((item, index) => {
+        if (index !== currentIndex) {
+            item.style.display = 'none';
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(100%)';
+        } else {
+            item.classList.add('active');
+            item.style.opacity = '1';
+            item.style.transform = 'translateX(0)';
+        }
+    });
+    toggleSlide(currentIndex);
+    startAutoSlide();
+});
+// END BKpengurusan
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -38,244 +135,6 @@ window.addEventListener('scroll', function () {
       }
   });
 });
-
-// ARTIKEL
-    const slider = document.querySelector('.slider');
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    
-    let currentSlide = 0;
-
-    function goToSlide(index) {
-      currentSlide = index;
-      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-      
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      goToSlide(currentSlide);
-    }
-
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      goToSlide(currentSlide);
-    }
-
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-    
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => goToSlide(index));
-    });
-
-      // Data artikel
-      const articles = [
-        {
-          image: 'path/ke/gambar1.jpg',
-          author: 'AdminWeb',
-          date: '25 Maret 2024',
-          category: 'Kajian',
-          title: 'Pentingnya Partisipasi dalam...',
-          excerpt: 'Partisipasi dalam organisasi di kampus merupakan salah satu aspek penting...'
-        },
-        {
-          image: 'path/ke/gambar2.jpg',
-          author: 'AdminWeb',
-          date: '25 Maret 2024',
-          category: 'Beasiswa',
-          title: '[INFO BEASISWA]',
-          excerpt: 'Selamat siang, FEB UI! Adkesma kembali hadir membawa info beasiswa...'
-        },
-        // Tambahkan artikel lainnya di sini
-      ];
-
-
-      // TIMELINE KEGIATAN
-      document.addEventListener("DOMContentLoaded", () => {
-        const todayBtn = document.getElementById("todayBtn");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        const monthViewBtn = document.getElementById("monthViewBtn");
-        const weekViewBtn = document.getElementById("weekViewBtn");
-        const dayViewBtn = document.getElementById("dayViewBtn");
-        const calendar = document.getElementById("calendar");
-        const currentViewTitle = document.getElementById("currentViewTitle");
-        const viewTitle = document.getElementById("viewTitle");
-      
-        let currentDate = new Date();
-        let currentView = "month";
-      
-        const renderCalendar = () => {
-          calendar.innerHTML = "";
-          if (currentView === "month") {
-            viewTitle.textContent = "Monthly View";
-            renderMonthView();
-          } else if (currentView === "week") {
-            viewTitle.textContent = "Weekly View";
-            renderWeekView();
-          } else if (currentView === "day") {
-            viewTitle.textContent = "Daily View";
-            renderDayView();
-          }
-        };
-      
-        const renderMonthView = () => {
-          currentViewTitle.textContent = currentDate.toLocaleDateString("en-US", {
-            month: "long",
-            year: "numeric",
-          });
-          const daysInMonth = new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth() + 1,
-            0
-          ).getDate();
-          const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-          const monthDiv = document.createElement("div");
-          monthDiv.className = "month";
-      
-          // Render Day Names (Sun, Mon, ...)
-          dayNames.forEach((day) => {
-            const dayHeader = document.createElement("div");
-            dayHeader.className = "day-header";
-            dayHeader.textContent = day;
-            monthDiv.appendChild(dayHeader);
-          });
-      
-          // Render Days of the Month
-          for (let day = 1; day <= daysInMonth; day++) {
-            const dayDiv = document.createElement("div");
-            dayDiv.className = "day";
-            dayDiv.textContent = day;
-            monthDiv.appendChild(dayDiv);
-          }
-      
-          calendar.appendChild(monthDiv);
-        };
-      
-        const renderWeekView = () => {
-          const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-          const weekDiv = document.createElement("div");
-          weekDiv.className = "week";
-      
-          // Header untuk nama hari, tanggal, bulan, tahun
-          const headerRow = document.createElement("div");
-          headerRow.className = "header-row";
-      
-          let startOfWeek = currentDate.getDate() - currentDate.getDay(); // Hari pertama minggu ini
-          dayNames.forEach((day, index) => {
-            const dayHeader = document.createElement("div");
-            dayHeader.className = "day-header";
-            const currentDay = new Date(
-              currentDate.getFullYear(),
-              currentDate.getMonth(),
-              startOfWeek + index
-            );
-            dayHeader.textContent = `${day}, ${currentDay.getDate()}/${
-              currentDay.getMonth() + 1
-            }/${currentDay.getFullYear()}`;
-            headerRow.appendChild(dayHeader);
-          });
-          weekDiv.appendChild(headerRow);
-      
-          // All-Day Section
-          const allDaySection = document.createElement("div");
-          allDaySection.className = "all-day";
-          for (let hour = 0; hour < 24; hour++) {
-            const timeSlot = document.createElement("div");
-            timeSlot.className = "time-slot";
-            timeSlot.textContent = `${hour % 12 || 12} ${
-              hour < 12 ? "AM" : "PM"
-            }`; // Format waktu
-            allDaySection.appendChild(timeSlot);
-          }
-          weekDiv.appendChild(allDaySection);
-      
-          calendar.appendChild(weekDiv);
-        };
-      
-        const renderDayView = () => {
-          const dayDiv = document.createElement("div");
-          dayDiv.className = "day-view";
-      
-          // Menambahkan bagian header dengan nama hari
-          const dayHeader = document.createElement("div");
-          dayHeader.className = "day-header";
-          dayHeader.textContent = currentDate.toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          });
-          dayDiv.appendChild(dayHeader);
-      
-          // Tambahkan bagian All-Day
-          const allDaySection = document.createElement("div");
-          allDaySection.className = "all-day";
-          for (let hour = 0; hour < 24; hour++) {
-            const timeSlot = document.createElement("div");
-            timeSlot.className = "time-slot";
-            timeSlot.textContent = `${hour % 12 || 12} ${hour < 12 ? "AM" : "PM"}`;
-            allDaySection.appendChild(timeSlot);
-          }
-      
-          dayDiv.appendChild(allDaySection);
-      
-          calendar.appendChild(dayDiv);
-        };
-      
-        todayBtn.addEventListener("click", () => {
-          currentDate = new Date(); // Kembali ke hari ini
-          currentView = "month"; // Tampilkan dalam mode bulan
-          renderCalendar();
-        });
-      
-        prevBtn.addEventListener("click", () => {
-          if (currentView === "month") {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-          } else if (currentView === "week") {
-            currentDate.setDate(currentDate.getDate() - 7);
-          } else if (currentView === "day") {
-            currentDate.setDate(currentDate.getDate() - 1);
-          }
-          renderCalendar();
-        });
-      
-        nextBtn.addEventListener("click", () => {
-          if (currentView === "month") {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-          } else if (currentView === "week") {
-            currentDate.setDate(currentDate.getDate() + 7);
-          } else if (currentView === "day") {
-            currentDate.setDate(currentDate.getDate() + 1);
-          }
-          renderCalendar();
-        });
-      
-        monthViewBtn.addEventListener("click", () => {
-          currentView = "month";
-          renderCalendar();
-        });
-      
-        weekViewBtn.addEventListener("click", () => {
-          currentView = "week";
-          renderCalendar();
-        });
-      
-        dayViewBtn.addEventListener("click", () => {
-          currentView = "day";
-          renderCalendar();
-        });
-      
-        renderCalendar();
-      });
-      
-      
-      
 
 // const sections = document.querySelectorAll("section");
 // const navLinks = document.querySelectorAll(".navbar-nav a");

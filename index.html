@@ -31,38 +31,38 @@
 </head>
 
 <body>
-  <button id="backToTop" class="hide" border= "none">
+  <button id="backToTop" class="hide" border="none">
     <i class="bi bi-arrow-up-square-fill"></i>
     <script>
       const backToTopButton = document.getElementById("backToTop");
-  
-    // Menampilkan atau menyembunyikan tombol berdasarkan posisi scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 200) { // Jika pengguna menggulir lebih dari 200px
-    backToTopButton.classList.add("show");
-    backToTopButton.classList.remove("hide");
-  } else {
-    backToTopButton.classList.add("hide");
-    backToTopButton.classList.remove("show");
-  }
-});
 
-// Fungsi untuk kembali ke atas
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,           // Gulir ke posisi paling atas
-    behavior: "smooth" // Gulir dengan animasi halus
-  });
-});
+      // Menampilkan atau menyembunyikan tombol berdasarkan posisi scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) { // Jika pengguna menggulir lebih dari 200px
+          backToTopButton.classList.add("show");
+          backToTopButton.classList.remove("hide");
+        } else {
+          backToTopButton.classList.add("hide");
+          backToTopButton.classList.remove("show");
+        }
+      });
+
+      // Fungsi untuk kembali ke atas
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,           // Gulir ke posisi paling atas
+          behavior: "smooth" // Gulir dengan animasi halus
+        });
+      });
     </script>
 
-</button>
+  </button>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-transparent position-fixed w-100">
     <div class="container">
-      <a class="navbar-brand" href="#hero"> <img src="image/hmj/logo_hmj.png" alt="" width="40"
-          class="me-3" />HMJ TI 2025</a>
+      <a class="navbar-brand" href="#hero"> <img src="image/hmj/logo_hmj.png" alt="" width="40" class="me-3" />HMJ TI
+        2025</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -157,37 +157,37 @@ backToTopButton.addEventListener("click", () => {
   </section>
 
   <section id="BKepengurusan">
-  <div class="slider">
-    <div class="list">
-      <div class="item">
-        <img src="image/Rekomendasi1.png" alt="" />
+    <div class="slider">
+      <div class="list">
+        <div class="item">
+          <img src="image/gedungjti.jpg" alt="" />
+        </div>
+        <div class="item">
+          <img src="image/Rekomendasi4.png" alt="" />
+        </div>
+        <div class="item">
+          <img src="image/gedungjti.jpg" alt="" />
+        </div>
+        <div class="item">
+          <img src="image/Rekomendasi4.png" alt="" />
+        </div>
+        <div class="item">
+          <img src="image/gedungjti.jpg" alt="" />
+        </div>
       </div>
-      <div class="item">
-        <img src="image/Rekomendasi2.png" alt="" />
+      <div class="buttons" style="display: none;">
+        <button id="prev"></button>
+        <button id="next"></button>
       </div>
-      <div class="item">
-        <img src="image/Rekomendasi3.png" alt="" />
-      </div>
-      <div class="item">
-        <img src="image/Rekomendasi4.png" alt="" />
-      </div>
-      <div class="item">
-        <img src="image/Rekomendasi5.png" alt="" />
-      </div>
+      <ul class="dots" style="cursor: pointer;">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
-    <div class="buttons">
-      <button id="prev"></button>
-      <button id="next"></button>
-    </div>
-    <ul class="dots">
-      <li class="active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-</section>
+  </section>
 
   <!-- Section Departemen -->
   <section class="department-section" id="department">
@@ -236,173 +236,98 @@ backToTopButton.addEventListener("click", () => {
             </div>
           </div>
         </div>
-        
-          <div class="col-md-6">
-            <div class="dep">
-              <div class="department-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
-                <img src="image/hmj/percobaan.png" alt="Departemen Keilmuan" class="department-image" />
-                <div class="department-overlay"></div>
-                <div class="department-content">
-                  <h3 class="department-title">Departemen kewirausahaan</h3>
-                  <a href="#" class="read-more-btn">READ MORE</a>
-                </div>
-            </div>
+
+        <div class="col-md-6">
+          <div class="dep">
+            <div class="department-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-offset="300">
+              <img src="image/hmj/percobaan.png" alt="Departemen Keilmuan" class="department-image" />
+              <div class="department-overlay"></div>
+              <div class="department-content">
+                <h3 class="department-title">Departemen kewirausahaan</h3>
+                <a href="#" class="read-more-btn">READ MORE</a>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
+
+    </div>
     </div>
   </section>
 
-<!-- ARTIKEL -->
-<div class="featured-articles">
-  <h2 class="title">LIST OF Featured Articles</h2>
-  
-  <div class="slider-container">
-    <div class="slider">
-      <div class="slide">
-        <div class="article-card">
-          <img src="/api/placeholder/400/300" alt="Article 1" class="article-image">
-          <div class="article-content">
-            <div class="article-meta">
-              <span>AdminWeb</span>
-              <span>March 25, 2024</span>
-              <span>Kajian</span>
-            </div>
-            <h3 class="article-title">Pentingnya Partisipasi dalam...</h3>
-            <p>Partisipasi dalam organisasi di kampus merupakan salah satu aspek penting dalam pengalaman mahasiswa. Organisasi kampus...</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="slide">
-        <div class="article-card">
-          <img src="/api/placeholder/400/300" alt="Article 2" class="article-image">
-          <div class="article-content">
-            <div class="article-meta">
-              <span>AdminWeb</span>
-              <span>March 25, 2024</span>
-              <span>Scholarship</span>
-            </div>
-            <h3 class="article-title">[INFO BEASISWA]</h3>
-            <p>Selamat siang, FEB UI! Adkesma kembali hadir membawa info beasiswa nih! Saat ini sedang ada...</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="slide">
-        <div class="article-card">
-          <img src="/api/placeholder/400/300" alt="Article 3" class="article-image">
-          <div class="article-content">
-            <div class="article-meta">
-              <span>AdminWeb</span>
-              <span>March 25, 2024</span>
-              <span>Scholarship</span>
-            </div>
-            <h3 class="article-title">Beasiswa Hana Bank</h3>
-            <p>Selamat sore, FEB UI! Adkesma kembali hadir membawa info beasiswa nih! Saat ini sedang ada...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="nav-button prev">←</button>
-    <button class="nav-button next">→</button>
-    
-    <div class="dots">
-      <button class="dot active"></button>
-      <button class="dot"></button>
-      <button class="dot"></button>
-    </div>
-  </div>
-
-  <button class="learn-more">LEARN MORE</button>
-</div>
-
   <!-- Postingan  -->
-  <section id="post"> 
-  <div class="animasiig">
-  <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 20px; margin-left: 250px;">
-        <!-- Baris 1 -->
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFDEBxZTRoZ/?utm_source=ig_web_copy_link" data-instgrm-version="12" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-          <div style="padding:16px;">
-              <a href="https://www.instagram.com/p/DFDEBxZTRoZ/?utm_source=ig_web_copy_link" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
-                  <div style="display: flex; flex-direction: row; align-items: center;">
-                      <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
-                      <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
-                          <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
-                          <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
-                      </div>
+  <section id="post">
+    <div class="animasiig">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; max-width: 800px; margin: 0 auto; padding: 12px;">
+        <!-- Post 1 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DFDEBxZTRoZ/?utm_source=ig_web_copy_link"
+          data-instgrm-version="12"
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <div style="padding:12px;">
+            <a href="https://www.instagram.com/p/DFDEBxZTRoZ/?utm_source=ig_web_copy_link"
+              style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+              target="_blank">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                <div
+                  style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 32px; margin-right: 12px; width: 32px;">
+                </div>
+                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                  <div
+                    style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 12px; margin-bottom: 6px; width: 80px;">
                   </div>
-              </a>
-              <p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">Post 1</p>
+                  <div style="background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 12px; width: 50px;">
+                  </div>
+                </div>
+              </div>
+            </a>
+            <p
+              style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:12px; line-height:15px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+              Post 1</p>
           </div>
-      </blockquote>
-        <!-- Post 2 & 3 (copy dari Post 1 dengan permalink yang berbeda) -->
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DE2JQ-WTMGi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-            <p style="text-align:center;">Post 2</p>
         </blockquote>
 
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEzlC_hzz08/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-            <p style="text-align:center;">Post 3</p>
+        <!-- Post 2 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DE2JQ-WTMGi/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <p style="text-align:center;">Post 2</p>
         </blockquote>
 
-        <!-- Baris 2 -->
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEw-LSdzJgO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-            <p style="text-align:center;">Post 4</p>
+        <!-- Post 3 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DEzlC_hzz08/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <p style="text-align:center;">Post 3</p>
         </blockquote>
 
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DErz6PbzcG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-            <p style="text-align:center;">Post 5</p>
+        <!-- Post 4 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DEw-LSdzJgO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <p style="text-align:center;">Post 4</p>
         </blockquote>
 
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DEpQATUzoc3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); width: 30%; max-width: 200px; min-width: 150px;">
-            <p style="text-align:center;">Post 6</p>
+        <!-- Post 5 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DErz6PbzcG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <p style="text-align:center;">Post 5</p>
         </blockquote>
-    </blockquote>
-    </div>
-  </div>
-</section>
-    <script src="https://www.instagram.com/embed.js"></script>
-<!-- End Postingan -->
-  
-<!-- TIME LINE KEGIATAN -->
-<div class="container1">
-  <div class="image-container">
-    <div class="image-wrapper">
-      <img src="image/hmj/gambar_kalender.png" alt="Event Image">
-    </div>
-  </div>
-  <div class="calendar-container">
-    <div class="calendar-header">
-      <button id="prevBtn">&lt;</button>
-      <h2 id="currentViewTitle">January 2025</h2>
-      <button id="nextBtn">&gt;</button>
-    </div>
-    <div class="view-buttons">
-      <button id="todayBtn">Today</button>
-      <button id="monthViewBtn">Month</button>
-      <button id="weekViewBtn">Week</button>
-      <button id="dayViewBtn">Day</button>
-    </div>
-    <div class="view-title" id="viewTitle">Monthly View</div>
 
-    <!-- Filter by Category -->
-    <div class="filter-category">
-      <h4>Filter by Category</h4>
-      <select>
-        <option value="all">All Categories</option>
-        <option value="workshop">Workshop</option>
-        <option value="seminar">Seminar</option>
-        <option value="meeting">Meeting</option>
-        <!-- Tambahkan kategori lainnya sesuai kebutuhan -->
-      </select>
+        <!-- Post 6 -->
+        <blockquote class="instagram-media"
+          data-instgrm-permalink="https://www.instagram.com/p/DEpQATUzoc3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          style="margin: 0 !important; width: 100% !important; max-width: 250px !important; min-width: auto !important;">
+          <p style="text-align:center;">Post 6</p>
+        </blockquote>
+      </div>
     </div>
+  </section>
+  <script src="https://www.instagram.com/embed.js"></script>
+  <!-- End Postingan -->
 
-    <div class="calendar" id="calendar"></div>
-  </div>
-</div>
 
 
   <!-- Section Program -->
@@ -471,26 +396,46 @@ backToTopButton.addEventListener("click", () => {
         </div>
       </div>
     </div>
- 
 
-  <!-- contact us -->
-  <section id="contact" style="background-image: url(image/gedungjti.jpg);">
-    <div class="container h-100">
-      <div class="row h-100" id="wadah">
-        <span class="icontelp">
-          <svg fill="#ffffff" height="70px" width="70px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.806 473.806" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M374.456,293.506c-9.7-10.1-21.4-15.5-33.8-15.5c-12.3,0-24.1,5.3-34.2,15.4l-31.6,31.5c-2.6-1.4-5.2-2.7-7.7-4 c-3.6-1.8-7-3.5-9.9-5.3c-29.6-18.8-56.5-43.3-82.3-75c-12.5-15.8-20.9-29.1-27-42.6c8.2-7.5,15.8-15.3,23.2-22.8 c2.8-2.8,5.6-5.7,8.4-8.5c21-21,21-48.2,0-69.2l-27.3-27.3c-3.1-3.1-6.3-6.3-9.3-9.5c-6-6.2-12.3-12.6-18.8-18.6 c-9.7-9.6-21.3-14.7-33.5-14.7s-24,5.1-34,14.7c-0.1,0.1-0.1,0.1-0.2,0.2l-34,34.3c-12.8,12.8-20.1,28.4-21.7,46.5 c-2.4,29.2,6.2,56.4,12.8,74.2c16.2,43.7,40.4,84.2,76.5,127.6c43.8,52.3,96.5,93.6,156.7,122.7c23,10.9,53.7,23.8,88,26 c2.1,0.1,4.3,0.2,6.3,0.2c23.1,0,42.5-8.3,57.7-24.8c0.1-0.2,0.3-0.3,0.4-0.5c5.2-6.3,11.2-12,17.5-18.1c4.3-4.1,8.7-8.4,13-12.9 c9.9-10.3,15.1-22.3,15.1-34.6c0-12.4-5.3-24.3-15.4-34.3L374.456,293.506z M410.256,398.806 C410.156,398.806,410.156,398.906,410.256,398.806c-3.9,4.2-7.9,8-12.2,12.2c-6.5,6.2-13.1,12.7-19.3,20 c-10.1,10.8-22,15.9-37.6,15.9c-1.5,0-3.1,0-4.6-0.1c-29.7-1.9-57.3-13.5-78-23.4c-56.6-27.4-106.3-66.3-147.6-115.6 c-34.1-41.1-56.9-79.1-72-119.9c-9.3-24.9-12.7-44.3-11.2-62.6c1-11.7,5.5-21.4,13.8-29.7l34.1-34.1c4.9-4.6,10.1-7.1,15.2-7.1 c6.3,0,11.4,3.8,14.6,7c0.1,0.1,0.2,0.2,0.3,0.3c6.1,5.7,11.9,11.6,18,17.9c3.1,3.2,6.3,6.4,9.5,9.7l27.3,27.3 c10.6,10.6,10.6,20.4,0,31c-2.9,2.9-5.7,5.8-8.6,8.6c-8.4,8.6-16.4,16.6-25.1,24.4c-0.2,0.2-0.4,0.3-0.5,0.5 c-8.6,8.6-7,17-5.2,22.7c0.1,0.3,0.2,0.6,0.3,0.9c7.1,17.2,17.1,33.4,32.3,52.7l0.1,0.1c27.6,34,56.7,60.5,88.8,80.8 c4.1,2.6,8.3,4.7,12.3,6.7c3.6,1.8,7,3.5,9.9,5.3c0.4,0.2,0.8,0.5,1.2,0.7c3.4,1.7,6.6,2.5,9.9,2.5c8.3,0,13.5-5.2,15.2-6.9 l34.2-34.2c3.4-3.4,8.8-7.5,15.1-7.5c6.2,0,11.3,3.9,14.4,7.3c0.1,0.1,0.1,0.1,0.2,0.2l55.1,55.1 C420.456,377.706,420.456,388.206,410.256,398.806z"></path> <path d="M256.056,112.706c26.2,4.4,50,16.8,69,35.8s31.3,42.8,35.8,69c1.1,6.6,6.8,11.2,13.3,11.2c0.8,0,1.5-0.1,2.3-0.2 c7.4-1.2,12.3-8.2,11.1-15.6c-5.4-31.7-20.4-60.6-43.3-83.5s-51.8-37.9-83.5-43.3c-7.4-1.2-14.3,3.7-15.6,11 S248.656,111.506,256.056,112.706z"></path> <path d="M473.256,209.006c-8.9-52.2-33.5-99.7-71.3-137.5s-85.3-62.4-137.5-71.3c-7.3-1.3-14.2,3.7-15.5,11 c-1.2,7.4,3.7,14.3,11.1,15.6c46.6,7.9,89.1,30,122.9,63.7c33.8,33.8,55.8,76.3,63.7,122.9c1.1,6.6,6.8,11.2,13.3,11.2 c0.8,0,1.5-0.1,2.3-0.2C469.556,223.306,474.556,216.306,473.256,209.006z"></path> </g> </g> </g></svg>
-        </span>
-        <h1 class="contactinform">Need Further Information? Don't hesitate to contact us!</h1>
-        <a href="#" class="buttoncontact"><button>contact us</button></a>
+   
+    <!-- contact us -->
+    <section id="contact" style="background-image: url(image/gedungjti.jpg);">
+      <div class="container h-100">
+        <div class="row h-100" id="wadah">
+          <span class="icontelp">
+            <svg fill="#ffffff" height="70px" width="70px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 473.806 473.806" xml:space="preserve"
+              stroke="#ffffff">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <g>
+                  <g>
+                    <path
+                      d="M374.456,293.506c-9.7-10.1-21.4-15.5-33.8-15.5c-12.3,0-24.1,5.3-34.2,15.4l-31.6,31.5c-2.6-1.4-5.2-2.7-7.7-4 c-3.6-1.8-7-3.5-9.9-5.3c-29.6-18.8-56.5-43.3-82.3-75c-12.5-15.8-20.9-29.1-27-42.6c8.2-7.5,15.8-15.3,23.2-22.8 c2.8-2.8,5.6-5.7,8.4-8.5c21-21,21-48.2,0-69.2l-27.3-27.3c-3.1-3.1-6.3-6.3-9.3-9.5c-6-6.2-12.3-12.6-18.8-18.6 c-9.7-9.6-21.3-14.7-33.5-14.7s-24,5.1-34,14.7c-0.1,0.1-0.1,0.1-0.2,0.2l-34,34.3c-12.8,12.8-20.1,28.4-21.7,46.5 c-2.4,29.2,6.2,56.4,12.8,74.2c16.2,43.7,40.4,84.2,76.5,127.6c43.8,52.3,96.5,93.6,156.7,122.7c23,10.9,53.7,23.8,88,26 c2.1,0.1,4.3,0.2,6.3,0.2c23.1,0,42.5-8.3,57.7-24.8c0.1-0.2,0.3-0.3,0.4-0.5c5.2-6.3,11.2-12,17.5-18.1c4.3-4.1,8.7-8.4,13-12.9 c9.9-10.3,15.1-22.3,15.1-34.6c0-12.4-5.3-24.3-15.4-34.3L374.456,293.506z M410.256,398.806 C410.156,398.806,410.156,398.906,410.256,398.806c-3.9,4.2-7.9,8-12.2,12.2c-6.5,6.2-13.1,12.7-19.3,20 c-10.1,10.8-22,15.9-37.6,15.9c-1.5,0-3.1,0-4.6-0.1c-29.7-1.9-57.3-13.5-78-23.4c-56.6-27.4-106.3-66.3-147.6-115.6 c-34.1-41.1-56.9-79.1-72-119.9c-9.3-24.9-12.7-44.3-11.2-62.6c1-11.7,5.5-21.4,13.8-29.7l34.1-34.1c4.9-4.6,10.1-7.1,15.2-7.1 c6.3,0,11.4,3.8,14.6,7c0.1,0.1,0.2,0.2,0.3,0.3c6.1,5.7,11.9,11.6,18,17.9c3.1,3.2,6.3,6.4,9.5,9.7l27.3,27.3 c10.6,10.6,10.6,20.4,0,31c-2.9,2.9-5.7,5.8-8.6,8.6c-8.4,8.6-16.4,16.6-25.1,24.4c-0.2,0.2-0.4,0.3-0.5,0.5 c-8.6,8.6-7,17-5.2,22.7c0.1,0.3,0.2,0.6,0.3,0.9c7.1,17.2,17.1,33.4,32.3,52.7l0.1,0.1c27.6,34,56.7,60.5,88.8,80.8 c4.1,2.6,8.3,4.7,12.3,6.7c3.6,1.8,7,3.5,9.9,5.3c0.4,0.2,0.8,0.5,1.2,0.7c3.4,1.7,6.6,2.5,9.9,2.5c8.3,0,13.5-5.2,15.2-6.9 l34.2-34.2c3.4-3.4,8.8-7.5,15.1-7.5c6.2,0,11.3,3.9,14.4,7.3c0.1,0.1,0.1,0.1,0.2,0.2l55.1,55.1 C420.456,377.706,420.456,388.206,410.256,398.806z">
+                    </path>
+                    <path
+                      d="M256.056,112.706c26.2,4.4,50,16.8,69,35.8s31.3,42.8,35.8,69c1.1,6.6,6.8,11.2,13.3,11.2c0.8,0,1.5-0.1,2.3-0.2 c7.4-1.2,12.3-8.2,11.1-15.6c-5.4-31.7-20.4-60.6-43.3-83.5s-51.8-37.9-83.5-43.3c-7.4-1.2-14.3,3.7-15.6,11 S248.656,111.506,256.056,112.706z">
+                    </path>
+                    <path
+                      d="M473.256,209.006c-8.9-52.2-33.5-99.7-71.3-137.5s-85.3-62.4-137.5-71.3c-7.3-1.3-14.2,3.7-15.5,11 c-1.2,7.4,3.7,14.3,11.1,15.6c46.6,7.9,89.1,30,122.9,63.7c33.8,33.8,55.8,76.3,63.7,122.9c1.1,6.6,6.8,11.2,13.3,11.2 c0.8,0,1.5-0.1,2.3-0.2C469.556,223.306,474.556,216.306,473.256,209.006z">
+                    </path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </span>
+          <h1 class="contactinform">Need Further Information? Don't hesitate to contact us!</h1>
+          <a href="#" class="buttoncontact"><button>contact us</button></a>
+        </div>
       </div>
-    </div>
+    </section>
   </section>
-</section>
 
   <!-- bottom -->
   <section id="bot">
     <div class="container h-100">
-      <div class="row h-100"> 
+      <div class="row h-100">
         <div class="main d-flex flex-row flex-wrap">
           <div class="quicklinks">
             <h4>Quick Links</h4>
@@ -518,13 +463,22 @@ backToTopButton.addEventListener("click", () => {
           </div>
           <div class="contactinfo">
             <h4>Contact Info</h4>
-            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.314 28.323" style="enable-background:new 0 0 28.314 28.323" width="18px" xml:space="preserve" class="telepon" fill="#444444"><path d="m27.728 20.384-4.242-4.242a1.982 1.982 0 0 0-1.413-.586h-.002c-.534 0-1.036.209-1.413.586L17.83 18.97l-8.485-8.485 2.828-2.828c.78-.78.78-2.05-.001-2.83L7.929.585A1.986 1.986 0 0 0 6.516 0h-.001C5.98 0 5.478.209 5.101.587L.858 4.83C.729 4.958-.389 6.168.142 8.827c.626 3.129 3.246 7.019 7.787 11.56 6.499 6.499 10.598 7.937 12.953 7.937 1.63 0 2.426-.689 2.604-.867l4.242-4.242c.378-.378.587-.881.586-1.416 0-.534-.208-1.037-.586-1.415zm-5.656 5.658c-.028.028-3.409 2.249-12.729-7.07C-.178 9.452 2.276 6.243 2.272 6.244L6.515 2l4.243 4.244-3.535 3.535a.999.999 0 0 0 0 1.414l9.899 9.899a.999.999 0 0 0 1.414 0l3.535-3.536 4.243 4.244-4.242 4.242z"/></svg>087779834215</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.314 28.323"
+                style="enable-background:new 0 0 28.314 28.323" width="18px" xml:space="preserve" class="telepon"
+                fill="#444444">
+                <path
+                  d="m27.728 20.384-4.242-4.242a1.982 1.982 0 0 0-1.413-.586h-.002c-.534 0-1.036.209-1.413.586L17.83 18.97l-8.485-8.485 2.828-2.828c.78-.78.78-2.05-.001-2.83L7.929.585A1.986 1.986 0 0 0 6.516 0h-.001C5.98 0 5.478.209 5.101.587L.858 4.83C.729 4.958-.389 6.168.142 8.827c.626 3.129 3.246 7.019 7.787 11.56 6.499 6.499 10.598 7.937 12.953 7.937 1.63 0 2.426-.689 2.604-.867l4.242-4.242c.378-.378.587-.881.586-1.416 0-.534-.208-1.037-.586-1.415zm-5.656 5.658c-.028.028-3.409 2.249-12.729-7.07C-.178 9.452 2.276 6.243 2.272 6.244L6.515 2l4.243 4.244-3.535 3.535a.999.999 0 0 0 0 1.414l9.899 9.899a.999.999 0 0 0 1.414 0l3.535-3.536 4.243 4.244-4.242 4.242z" />
+              </svg>087779834215</p>
             <p>
-              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="18px" fill="#444444">
-                <path d="M123.25 24.192c0-.018 0-.034-.005-.052s-.007-.063-.009-.094a1.734 1.734 0 0 0-.083-.408c-.006-.018 0-.037-.011-.055s-.01-.015-.013-.023a1.734 1.734 0 0 0-.227-.407c-.021-.028-.043-.053-.066-.08a1.755 1.755 0 0 0-.31-.294c-.012-.009-.022-.02-.034-.028a1.744 1.744 0 0 0-.414-.2c-.034-.012-.068-.022-.1-.032a1.733 1.733 0 0 0-.474-.073H6.5a1.733 1.733 0 0 0-.474.073c-.035.01-.068.02-.1.032a1.744 1.744 0 0 0-.414.2c-.012.008-.022.019-.034.028a1.755 1.755 0 0 0-.31.294c-.022.027-.045.052-.066.08a1.734 1.734 0 0 0-.227.407c0 .008-.01.015-.013.023s-.005.037-.011.055a1.734 1.734 0 0 0-.083.408c0 .032-.009.063-.009.094s-.005.034-.005.052v79.615c0 .023.006.045.007.068a1.737 1.737 0 0 0 .019.188c.008.051.015.1.027.152a1.74 1.74 0 0 0 .056.179c.017.047.033.094.054.139a1.729 1.729 0 0 0 .093.172c.024.04.048.081.075.119a1.743 1.743 0 0 0 .125.152c.033.036.066.072.1.106.021.019.037.042.059.061s.036.017.052.03a1.736 1.736 0 0 0 .452.263c.035.014.071.022.107.033a1.732 1.732 0 0 0 .488.085c.012 0 .023.006.035.006H121.501c.012 0 .023-.006.034-.006a1.732 1.732 0 0 0 .489-.085c.035-.011.07-.019.1-.033a1.736 1.736 0 0 0 .453-.263c.016-.013.036-.017.052-.03s.038-.042.059-.061c.036-.034.069-.069.1-.106a1.743 1.743 0 0 0 .125-.152c.027-.038.051-.078.075-.119a1.729 1.729 0 0 0 .093-.172c.021-.045.037-.092.054-.139a1.74 1.74 0 0 0 .056-.179c.012-.05.019-.1.027-.152a1.737 1.737 0 0 0 .019-.188c0-.023.007-.045.007-.068zM45.8 60.316l17.058 14.677a1.751 1.751 0 0 0 2.283 0L82.2 60.316l35.512 41.741H10.289zM8.25 99.052V28.007l34.9 30.026zm76.6-41.019 34.9-30.026v71.045zm31.931-32.091L81.276 56.493c-.006.005-.014.008-.02.014l-.019.02L64 71.358 46.763 56.527l-.019-.02-.02-.014-35.507-30.551z"></path>
+              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="18px"
+                fill="#444444">
+                <path
+                  d="M123.25 24.192c0-.018 0-.034-.005-.052s-.007-.063-.009-.094a1.734 1.734 0 0 0-.083-.408c-.006-.018 0-.037-.011-.055s-.01-.015-.013-.023a1.734 1.734 0 0 0-.227-.407c-.021-.028-.043-.053-.066-.08a1.755 1.755 0 0 0-.31-.294c-.012-.009-.022-.02-.034-.028a1.744 1.744 0 0 0-.414-.2c-.034-.012-.068-.022-.1-.032a1.733 1.733 0 0 0-.474-.073H6.5a1.733 1.733 0 0 0-.474.073c-.035.01-.068.02-.1.032a1.744 1.744 0 0 0-.414.2c-.012.008-.022.019-.034.028a1.755 1.755 0 0 0-.31.294c-.022.027-.045.052-.066.08a1.734 1.734 0 0 0-.227.407c0 .008-.01.015-.013.023s-.005.037-.011.055a1.734 1.734 0 0 0-.083.408c0 .032-.009.063-.009.094s-.005.034-.005.052v79.615c0 .023.006.045.007.068a1.737 1.737 0 0 0 .019.188c.008.051.015.1.027.152a1.74 1.74 0 0 0 .056.179c.017.047.033.094.054.139a1.729 1.729 0 0 0 .093.172c.024.04.048.081.075.119a1.743 1.743 0 0 0 .125.152c.033.036.066.072.1.106.021.019.037.042.059.061s.036.017.052.03a1.736 1.736 0 0 0 .452.263c.035.014.071.022.107.033a1.732 1.732 0 0 0 .488.085c.012 0 .023.006.035.006H121.501c.012 0 .023-.006.034-.006a1.732 1.732 0 0 0 .489-.085c.035-.011.07-.019.1-.033a1.736 1.736 0 0 0 .453-.263c.016-.013.036-.017.052-.03s.038-.042.059-.061c.036-.034.069-.069.1-.106a1.743 1.743 0 0 0 .125-.152c.027-.038.051-.078.075-.119a1.729 1.729 0 0 0 .093-.172c.021-.045.037-.092.054-.139a1.74 1.74 0 0 0 .056-.179c.012-.05.019-.1.027-.152a1.737 1.737 0 0 0 .019-.188c0-.023.007-.045.007-.068zM45.8 60.316l17.058 14.677a1.751 1.751 0 0 0 2.283 0L82.2 60.316l35.512 41.741H10.289zM8.25 99.052V28.007l34.9 30.026zm76.6-41.019 34.9-30.026v71.045zm31.931-32.091L81.276 56.493c-.006.005-.014.008-.02.014l-.019.02L64 71.358 46.763 56.527l-.019-.02-.02-.014-35.507-30.551z">
+                </path>
               </svg>
-              <a href="mailto:hmjti@polije.ac.id" style="color: rgb(88, 88, 255); text-decoration: none; margin-left: -2px;">hmjti@polije.ac.id</a>
-            </p>            
+              <a href="mailto:hmjti@polije.ac.id"
+                style="color: rgb(88, 88, 255); text-decoration: none; margin-left: -2px;">hmjti@polije.ac.id</a>
+            </p>
           </div>
         </div>
       </div>
@@ -533,13 +487,10 @@ backToTopButton.addEventListener("click", () => {
   <div class="copyright">
     <div class="container copyr">
       <p>Copyright © 2025 HMJTI - All rights reserved.</p>
-    </div>  
+    </div>
   </div>
 
   <!-- Script Postingan -->
-
-  
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
